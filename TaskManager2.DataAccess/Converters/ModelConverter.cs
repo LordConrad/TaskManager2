@@ -1,26 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using TaskManager2.DataAccess.EFModels;
+using TaskManager2.DataAccess.Models;
 
 namespace TaskManager2.DataAccess.Converters
 {
     public class ModelConverter
     {
-        public static Models.Task Convert(Task t)
+        public static MyTaskInList Convert(Task t)
         {
-            return new Models.Task
-            {
-                Id = t.TaskId,
-                CompleteDateTime = t.CompleteDate,
-                SendDateTime = t.CreateDate,
-                Text = t.TaskText,
-                AssignDateTime = t.AssignDateTime,
-                Recipient = t.TaskRecipient != null ? t.TaskRecipient.UserFullName : string.Empty,
-                Sender = t.TaskSender != null ? t.TaskSender.UserFullName : string.Empty
-                
-            };
+            return new MyTaskInList
+                {
+                    Id = t.TaskId,
+                    Text = t.TaskText,
+                    AssignDateTime = t.AssignDateTime,
+                    Sender = t.TaskSender != null ? t.TaskSender.UserFullName : string.Empty,
+                    Deadline = t.Deadline,
+                    IsRecipientViewed = t.IsRecipientViewed,
+                    TaskPriorityId = t.PriorityId
+                };
         }
+
     }
 }

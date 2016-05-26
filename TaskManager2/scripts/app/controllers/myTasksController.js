@@ -7,6 +7,15 @@
         'taskService',
         function ($scope, $http, NgTableParams, taskService) {
 
+            //$scope.checkDeadline = function (deadline) {
+            //    if (deadline) {
+            //        if (new Date(deadline) < new Date('2015-04-01')) {
+            //            return { 'background': '-webkit-linear-gradient(left, rgba(255,255,255,1) 51%,rgba(255,96,99,1) 100%)' };
+            //        }
+            //    }
+            //    return null;
+            //};
+
             $scope.tableParams = new NgTableParams(
             {
                 page: 1,
@@ -19,7 +28,7 @@
                 }
             });
 
-            $scope.$watch("filter.$", function () {
+            $scope.$watch("filter.Text", function () {
                 $scope.tableParams.reload();
             });
         }

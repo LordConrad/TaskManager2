@@ -21,7 +21,6 @@
                             '<div class="double-bounce1"></div>',
                         '<div class="double-bounce2"></div>',
                     '</div>',
-                    '<div class="please-wait">Загрузка...</div>',
                 '</div>'
           ].join(''),
           controller: function ($scope, spinnerService) {

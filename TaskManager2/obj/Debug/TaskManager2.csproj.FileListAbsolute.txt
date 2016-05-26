@@ -31,3 +31,36 @@ c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\
 c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\obj\Debug\TaskManager2.csprojResolveAssemblyReference.cache
 c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\obj\Debug\TaskManager2.dll
 c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\obj\Debug\TaskManager2.pdb
+d:\Projects\TaskManager2\TaskManager2\bin\ApplicationInsights.config
+d:\Projects\TaskManager2\TaskManager2\bin\roslyn\csc.exe
+d:\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+d:\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+d:\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.CodeAnalysis.dll
+d:\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+d:\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.CSharp.Core.targets
+d:\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+d:\Projects\TaskManager2\TaskManager2\bin\roslyn\System.Collections.Immutable.dll
+d:\Projects\TaskManager2\TaskManager2\bin\roslyn\System.Reflection.Metadata.dll
+d:\Projects\TaskManager2\TaskManager2\bin\roslyn\vbc.exe
+d:\Projects\TaskManager2\TaskManager2\bin\roslyn\VBCSCompiler.exe
+d:\Projects\TaskManager2\TaskManager2\bin\roslyn\VBCSCompiler.exe.config
+d:\Projects\TaskManager2\TaskManager2\bin\TaskManager2.dll.config
+d:\Projects\TaskManager2\TaskManager2\bin\TaskManager2.dll
+d:\Projects\TaskManager2\TaskManager2\bin\TaskManager2.pdb
+d:\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.Agent.Intercept.dll
+d:\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.DependencyCollector.dll
+d:\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.PerfCounterCollector.dll
+d:\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+d:\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.Web.dll
+d:\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.WindowsServer.dll
+d:\Projects\TaskManager2\TaskManager2\bin\Microsoft.ApplicationInsights.dll
+d:\Projects\TaskManager2\TaskManager2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+d:\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.DependencyCollector.xml
+d:\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+d:\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.Web.xml
+d:\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.WindowsServer.xml
+d:\Projects\TaskManager2\TaskManager2\bin\Microsoft.ApplicationInsights.xml
+d:\Projects\TaskManager2\TaskManager2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+d:\Projects\TaskManager2\TaskManager2\obj\Debug\TaskManager2.csprojResolveAssemblyReference.cache
+d:\Projects\TaskManager2\TaskManager2\obj\Debug\TaskManager2.dll
+d:\Projects\TaskManager2\TaskManager2\obj\Debug\TaskManager2.pdb
