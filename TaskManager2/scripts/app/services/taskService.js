@@ -4,6 +4,9 @@
     '$filter',
     function ($http, spinnerService, $filter) {
 
+        var serviceHostUrl = 'http://localhost:1135';
+        //var serviceHostUrl = 'http://10.10.4.110/TaskManager2.DataAccess';
+
         function filterData(data, filter) {
             var res = $filter('filter')(data, filter);
             return res;
@@ -24,7 +27,7 @@
                 params.page(currentPage);
             }
             var res = data.slice((currentPage - 1) * pageSize, currentPage * pageSize);
-            
+
             return res;
         }
 
@@ -33,18 +36,32 @@
             return res;
         }
 
+        var getMyTask = function(taskId) {
+            //spinnerService.show('myTaskSpinner');
+            $http({
+                method: 'GET',
+                url: serviceHostUrl + '/api/task/' + taskId
+            }).success(function(data, status) {
+                return data;
+            }).error(function(data, status) {
+                alert('error');
+            }).finally(function() {
+                //spinnerService.hide('myTaskSpinner');
+            });
+        }
+
         var getMyTasks = function ($defer, params, filter) {
             spinnerService.show('myTasksSpinner');
             $http({
                 method: 'GET',
-                //url: 'http://localhost:1135/api/task',
-                url: 'http://10.10.4.110/TaskManager2.DataAccess/api/task/',
-        }).success(function (data, status) {
+                url: serviceHostUrl + '/api/task'
                 
+            }).success(function (data, status) {
+
                 var filteredData = $filter('filter')(data, filter);
                 params.total(filteredData.length);
                 var transformedData = transformData(data, filter, params);
-                
+
                 $defer.resolve(transformedData);
             }).error(function (data, status) {
                 alert('error');
@@ -54,7 +71,8 @@
         };
 
         return {
-            getMyTasks: getMyTasks
+            getMyTasks: getMyTasks,
+            getMyTask: getMyTask
         };
     }
 ]);

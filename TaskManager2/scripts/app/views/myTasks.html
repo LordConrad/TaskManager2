@@ -7,7 +7,7 @@
         <a class="glyphicon glyphicon-remove form-control-feedback form-control-clear" ng-show="filter.Text" ng-click="filter.Text = ''" style="pointer-events: auto; text-decoration: none; cursor: pointer;"></a>
     </div>
     <table ng-table="tableParams" class="table table-bordered table-striped table-condensed">
-        <tr ng-repeat="task in $data">
+        <tr ng-repeat="task in $data" ng-click="showTask(task.Id)">
             <td data-title="'#'" sortable="'Id'">{{task.Id}}</td>
             <td data-title="'Текст'" sortable="'Text'">{{task.Text}}</td>
             <td data-title="'Создал'" sortable="'Sender'">{{task.Sender}}</td>

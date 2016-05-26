@@ -20,6 +20,10 @@ app.config([
                 templateUrl: 'scripts/app/views/myTasks.html',
                 controller: 'myTasksController'
             }).
+            when('/recipientTask/:taskId', {
+                templateUrl: 'scripts/app/views/recipientTask.html',
+                controller: 'recipientTaskController'
+            }).
             otherwise({
                 redirectTo: '/myTasks'
             });

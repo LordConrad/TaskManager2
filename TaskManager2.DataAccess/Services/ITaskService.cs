@@ -9,6 +9,7 @@ namespace TaskManager2.DataAccess.Services
 {
     public interface ITaskService
     {
-        IEnumerable<MyTaskInList> GetAllTasks();
+        IEnumerable<MyTaskInList> GetMyTasks();
+        MyTask GetMyTask(int taskId);
     }
 }

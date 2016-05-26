@@ -11,7 +11,7 @@ namespace TaskManager2.DataAccess.Services
 {
     public class TaskService : ITaskService
     {
-        public IEnumerable<MyTaskInList> GetAllTasks()
+        public IEnumerable<MyTaskInList> GetMyTasks()
         {
             using (var context = new TaskManagerContext())
             {
@@ -19,10 +19,29 @@ namespace TaskManager2.DataAccess.Services
                     .Include(x => x.TaskSender)
                     .Include(x => x.TaskRecipient)
                     .Include(x => x.TaskPriority)
-                    .ToList()
-                    .Select(ModelConverter.Convert);
-                
-                return result;
+                    .ToList();
+                if (result.Any())
+                {
+                    return ModelConverter.Convert(result);
+                }
+                return null;
+            }
+        }
+
+        public MyTask GetMyTask(int taskId)
+        {
+            using (var context = new TaskManagerContext())
+            {
+                var task = context.Tasks
+                    .Include(x => x.TaskSender)
+                    .Include(x => x.TaskRecipient)
+                    .Include(x => x.TaskPriority)
+                    .First(x => x.TaskId == taskId);
+                if (task != null)
+                {
+                    return ModelConverter.Convert(task);
+                }
+                return null;
             }
         }
     }

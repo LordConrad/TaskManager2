@@ -1,4 +1,8 @@
-﻿.margin-top-50 {
+﻿.margin-top-25 {
+    margin-top: 25px;
+}
+
+.margin-top-50 {
     margin-top: 50px;
 }
 
@@ -13,6 +17,10 @@
 
 table > tbody > tr {
     cursor: pointer;
+}
+
+.table > thead > tr > th {
+    vertical-align: middle;
 }
 
 table > tbody > tr:hover {

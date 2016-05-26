@@ -87,7 +87,6 @@ C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2.
 C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2.DataAccess\bin\System.Web.Http.Owin.xml
 C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2.DataAccess\obj\Debug\TaskManager2.DataAccess.dll
 C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2.DataAccess\obj\Debug\TaskManager2.DataAccess.pdb
-C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2.DataAccess\obj\Debug\TaskManager2.DataAccess.csprojResolveAssemblyReference.cache
 d:\Projects\TaskManager2\TaskManager2.DataAccess\bin\ApplicationInsights.config
 d:\Projects\TaskManager2\TaskManager2.DataAccess\bin\roslyn\csc.exe
 d:\Projects\TaskManager2\TaskManager2.DataAccess\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll

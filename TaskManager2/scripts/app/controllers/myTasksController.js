@@ -2,10 +2,10 @@
     angular.module('app.controllers').controller('myTasksController',
     [
         '$scope',
-        '$http',
         'ngTableParams',
         'taskService',
-        function ($scope, $http, NgTableParams, taskService) {
+        '$location',
+        function ($scope, NgTableParams, taskService, $location) {
 
             //$scope.checkDeadline = function (deadline) {
             //    if (deadline) {
@@ -15,6 +15,10 @@
             //    }
             //    return null;
             //};
+
+            $scope.showTask = function(id) {
+                $location.path('/recipientTask/' + id);
+            }
 
             $scope.tableParams = new NgTableParams(
             {

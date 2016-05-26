@@ -19,8 +19,14 @@ namespace TaskManager2.DataAccess.Controllers
 
         public IEnumerable<MyTaskInList> Get()
         {
-            var result = _taskService.GetAllTasks();
+            var result = _taskService.GetMyTasks();
             return result;
-        } 
+        }
+
+        public MyTask Get(int taskId)
+        {
+            return _taskService.GetMyTask(taskId);
+        }
+
     }
 }
