@@ -1,0 +1,17 @@
+﻿<div>
+    <div class="center-spinner">
+        <spinner name="myTasksSpinner"></spinner>
+    </div>
+    <div class="form-group has-feedback has-clear">
+        <input class="form-control margin-top-bottom-15" type="text" ng-model="filter.$" />
+        <a class="glyphicon glyphicon-remove form-control-feedback form-control-clear" ng-show="filter.$" ng-click="filter.$ = null" style="pointer-events: auto; text-decoration: none; cursor: pointer;"></a>
+    </div>
+    <table ng-table="tableParams" class="table table-bordered table-striped table-condensed">
+        <tr ng-repeat="task in $data">
+            <td data-title="'#'" sortable="'Id'">{{task.Id}}</td>
+            <td data-title="'Текст'" sortable="'Text'">{{task.Text}}</td>
+            <td data-title="'Создал'" sortable="'Sender'">{{task.Sender}}</td>
+            <td data-title="'Дата создания'" sortable="'SendDateTime'">{{task.SendDateTime | date: 'dd.MM.yyyy HH:mm'}}</td>
+        </tr>
+    </table>
+</div>
