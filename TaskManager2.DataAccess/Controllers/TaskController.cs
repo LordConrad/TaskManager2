@@ -16,16 +16,17 @@ namespace TaskManager2.DataAccess.Controllers
             _taskService = new TaskService();
         }
 
-
+        [Route("api/task")]
         public IEnumerable<MyTaskInList> Get()
         {
             var result = _taskService.GetMyTasks();
             return result;
         }
 
-        public MyTask Get(int taskId)
+        [Route("api/task/{id:int}")]
+        public MyTask Get(int id)
         {
-            return _taskService.GetMyTask(taskId);
+            return _taskService.GetMyTask(id);
         }
 
     }

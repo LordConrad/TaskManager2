@@ -2,8 +2,21 @@
     <!--<div class="center-spinner">
         <spinner name="myTasksSpinner"></spinner>
     </div>-->
-    <div class="panel panel-primary">
+    <table class="center-cells">
+        <tr>
+            <td><b>Отправил: </b>{{task.SenderName}}</td>
+            <td><b>Назначена: </b>{{task.AssignDateTime | date: 'dd.MM.yyyy HH:mm'}}</td>
+            <td><b>Выполнить до: </b>{{task.Deadline | date: 'dd.MM.yyyy'}}</td>
+        </tr>
+    </table>
+    <div class="panel panel-primary margin-top-20">
         <div class="panel-heading">Заявка #{{task.Id}}</div>
         <div class="panel-body">{{task.Text}}</div>
+    </div>
+    <div><b>Статус: </b>
+        <span ng-style="getStatusLabelStyle(task.CompleteDateTime, task.AcceptCompleteDateTime)"><b>{{task.AcceptCompleteDateTime ? 'Подтверждена ' + (task.AcceptCompleteDateTime | date: 'dd.MM.yyyy HH:mm') : (task.CompleteDateTime ? 'Выполнена ' + (taskCompleteDatetime | date: 'dd.MM.yyyy HH:mm') : 'Не выполнена')}}</b></span>
+    </div>
+    <div class="margin-top-20">
+        <a href="" ng-click="backToList()"><span class="glyphicon glyphicon-arrow-left"></span>   к списку заявок</a>
     </div>
 </div>

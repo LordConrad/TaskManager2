@@ -177,3 +177,4 @@ d:\Projects\TaskManager2\TaskManager2.DataAccess\bin\System.Web.Http.Owin.xml
 d:\Projects\TaskManager2\TaskManager2.DataAccess\obj\Debug\TaskManager2.DataAccess.dll
 d:\Projects\TaskManager2\TaskManager2.DataAccess\obj\Debug\TaskManager2.DataAccess.pdb
 d:\Projects\TaskManager2\TaskManager2.DataAccess\obj\Debug\TaskManager2.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2.DataAccess\obj\Debug\TaskManager2.DataAccess.csprojResolveAssemblyReference.cache

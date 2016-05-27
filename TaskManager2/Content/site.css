@@ -1,4 +1,8 @@
-﻿.margin-top-25 {
+﻿.margin-top-20 {
+    margin-top: 20px;
+}
+
+.margin-top-25 {
     margin-top: 25px;
 }
 
@@ -15,7 +19,7 @@
     margin-bottom: 15px;
 }
 
-table > tbody > tr {
+table.ng-table > tbody > tr {
     cursor: pointer;
 }
 
@@ -23,9 +27,24 @@ table > tbody > tr {
     vertical-align: middle;
 }
 
-table > tbody > tr:hover {
+table.ng-table > tbody > tr:hover {
     background-color: #e8e8e8 !important;
     /*border: 2px solid black;*/
+}
+
+table.center-cells {
+    width: 100%;
+
+}
+
+table.center-cells > tbody > tr > td:last-of-type {
+    text-align: right;
+
+}
+
+table.center-cells > tbody > tr > td:nth-child(2) {
+    text-align: center;
+
 }
 
 .overdue {

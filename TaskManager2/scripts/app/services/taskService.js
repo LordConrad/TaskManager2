@@ -38,7 +38,7 @@
 
         var getMyTask = function(taskId) {
             //spinnerService.show('myTaskSpinner');
-            $http({
+            return $http({
                 method: 'GET',
                 url: serviceHostUrl + '/api/task/' + taskId
             }).success(function(data, status) {

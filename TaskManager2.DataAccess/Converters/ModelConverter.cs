@@ -27,7 +27,14 @@ namespace TaskManager2.DataAccess.Converters
             return new MyTask
             {
                 Id = t.TaskId,
-                Text = t.TaskText
+                Text = t.TaskText,
+                // todo: remove checking value
+                AssignDateTime = t.AssignDateTime.HasValue ? t.AssignDateTime.Value : new DateTime(),
+                Deadline = t.Deadline.HasValue ? t.Deadline.Value : new DateTime(),
+                SenderId = t.SenderId,
+                SenderName = t.TaskSender.UserFullName,
+                CompleteDateTime = t.CompleteDate,
+                AcceptCompleteDateTime = t.AcceptCpmpleteDate
             };
         }
 
