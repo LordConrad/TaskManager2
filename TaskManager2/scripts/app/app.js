@@ -25,9 +25,9 @@
                     templateUrl: 'scripts/app/views/recipientTask.html',
                     controller: 'recipientTaskController'
                 }).
-                when('/senderTask', {
-                    templateUrl: 'scripts/app/views/senderTask.html',
-                    controller: 'senderTaskController'
+                when('/senderTasks', {
+                    templateUrl: 'scripts/app/views/senderTasks.html',
+                    controller: 'senderTasksController'
                 }).
                 otherwise({
                     redirectTo: '/myTasks'

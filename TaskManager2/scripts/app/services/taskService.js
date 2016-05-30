@@ -37,19 +37,19 @@
                 return res;
             }
 
-            var getMyTask = function (taskId) {
+            var getMyTask = function(taskId) {
                 //spinnerService.show('myTaskSpinner');
                 return $http({
                     method: 'GET',
                     url: serviceHostUrl + '/api/task/' + taskId
-                }).success(function (data, status) {
+                }).success(function(data, status) {
                     return data;
-                }).error(function (data, status) {
+                }).error(function(data, status) {
                     alert('error');
-                }).finally(function () {
+                }).finally(function() {
                     //spinnerService.hide('myTaskSpinner');
                 });
-            }
+            };
 
             var getMyTasks = function ($defer, params, filter) {
                 spinnerService.show('myTasksSpinner');
@@ -69,6 +69,13 @@
                 }).finally(function () {
                     spinnerService.hide('myTasksSpinner');
                 });
+            };
+
+            var getSenderTasks = function ($defer, params, filter, senderId) {
+                $http({
+                    method: 'GET',
+                    url: serviceHostUrl + '/api/senderTask'
+                })
             };
 
             return {

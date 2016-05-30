@@ -1,11 +1,11 @@
-﻿(function () {
-    angular.module('app.controllers').controller('myTasksController',
-    [
+﻿(function() {
+    angular.module('app.controllers').controller('senderTaskController', [
         '$scope',
         'ngTableParams',
         'taskService',
+        'commentService',
         '$location',
-        function ($scope, NgTableParams, taskService, $location) {
+        function ($scope, NgTableParams, taskService, commentService, $location) {
 
             //$scope.checkDeadline = function (deadline) {
             //    if (deadline) {
@@ -16,19 +16,19 @@
             //    return null;
             //};
 
-            $scope.showTask = function(id) {
-                $location.path('/recipientTask/' + id);
+            $scope.showTask = function (id) {
+                $location.path('/senderTask/' + id);
             };
 
             $scope.tableParams = new NgTableParams(
             {
                 page: 1,
                 count: 25,
-                sorting: {name: 'asc'}
+                sorting: { name: 'asc' }
             }, {
                 total: 0,
                 getData: function ($defer, params) {
-                    taskService.getMyTasks($defer, params, $scope.filter);
+                    taskService.getSenderTasks($defer, params, $scope.filter, senderId);
                 }
             });
 
