@@ -36,7 +36,7 @@ namespace TaskManager2.DataAccess.Services
                     .Include(x => x.TaskSender)
                     .Include(x => x.TaskRecipient)
                     .Include(x => x.TaskPriority)
-                    .First(x => x.TaskId == taskId);
+                    .FirstOrDefault(x => x.TaskId == taskId);
                 if (task != null)
                 {
                     return ModelConverter.Convert(task);

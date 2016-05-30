@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TaskManager2.DataAccess.EFModels;
 using TaskManager2.DataAccess.Models;
+using Comment = TaskManager2.DataAccess.EFModels.Comment;
 
 namespace TaskManager2.DataAccess.Converters
 {
@@ -34,8 +35,22 @@ namespace TaskManager2.DataAccess.Converters
                 SenderId = t.SenderId,
                 SenderName = t.TaskSender.UserFullName,
                 CompleteDateTime = t.CompleteDate,
-                AcceptCompleteDateTime = t.AcceptCpmpleteDate
+                AcceptCompleteDateTime = t.AcceptCpmpleteDate,
             };
+        }
+
+
+        public static IEnumerable<Models.Comment> Convert(ICollection<Comment> comments)
+        {
+            return comments.Select(c => new Models.Comment
+            {
+                TaskId = c.TaskId,
+                AuthorId = c.AuthorId,
+                AuthorName = c.Author.UserFullName,
+                CommentDate = c.CommentDate,
+                CommentId = c.CommentId,
+                CommentText = c.CommentText
+            });
         }
 
     }

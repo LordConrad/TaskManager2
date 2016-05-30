@@ -5,7 +5,7 @@
     <table class="center-cells">
         <tr>
             <td><b>Отправил: </b>{{task.SenderName}}</td>
-            <td><b>Назначена: </b>{{task.AssignDateTime | date: 'dd.MM.yyyy HH:mm'}}</td>
+            <td><b>Адресована: </b>{{task.AssignDateTime | date: 'dd.MM.yyyy HH:mm'}}</td>
             <td><b>Выполнить до: </b>{{task.Deadline | date: 'dd.MM.yyyy'}}</td>
         </tr>
     </table>
@@ -13,10 +13,39 @@
         <div class="panel-heading">Заявка #{{task.Id}}</div>
         <div class="panel-body">{{task.Text}}</div>
     </div>
-    <div><b>Статус: </b>
-        <span ng-style="getStatusLabelStyle(task.CompleteDateTime, task.AcceptCompleteDateTime)"><b>{{task.AcceptCompleteDateTime ? 'Подтверждена ' + (task.AcceptCompleteDateTime | date: 'dd.MM.yyyy HH:mm') : (task.CompleteDateTime ? 'Выполнена ' + (taskCompleteDatetime | date: 'dd.MM.yyyy HH:mm') : 'Не выполнена')}}</b></span>
+    <table class="center-cells">
+        <tr>
+            <td>
+                <b>Статус: </b>
+                <span ng-style="getStatusLabelStyle(task.CompleteDateTime, task.AcceptCompleteDateTime)"><b>{{task.AcceptCompleteDateTime ? 'Подтверждена ' + (task.AcceptCompleteDateTime | date: 'dd.MM.yyyy HH:mm') : (task.CompleteDateTime ? 'Выполнена ' + (taskCompleteDatetime | date: 'dd.MM.yyyy HH:mm') : 'Не выполнена')}}</b></span>
+            </td>
+            <td></td>
+            <td>
+                <button class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> &nbsp;Выполнено</button>
+            </td>
+        </tr>
+    </table>
+    <div class="comments-block form-group margin-top-20">
+        <div>
+            <label>Комментарии:</label>
+            <div class="no-comments" ng-show="comments.length == 0">Комментариев нет</div>
+            <div ng-repeat="comment in comments" class="comment-container">
+                <div class="comment-author">{{comment.AuthorName}}</div>
+                <div class="comment-date">{{comment.CommentDate | date: "dd.MM.yyyy HH:mm"}}</div>
+                <div class="comment-text">{{comment.CommentText}}</div>
+            </div>
+        </div>
+        <div class="new-comment form-group">
+            <label for="new-comment">Новый комментарий:</label>
+            <textarea ng-model="newComment" class="form-control" rows="5" id="new-comment"></textarea>
+            <div class="right-button">
+                <button class="btn btn-default" ng-disabled="!newComment" ng-click="addComment(task.Id, task.SenderId, newComment)">Добавить</button>
+            </div>
+        </div>
+        
     </div>
-    <div class="margin-top-20">
-        <a href="" ng-click="backToList()"><span class="glyphicon glyphicon-arrow-left"></span>   к списку заявок</a>
+    <div>
+        <span class="glyphicon glyphicon-arrow-left back-arrow-glyph"></span>
+        <a href="" ng-click="backToList()"> &nbsp;к списку заявок</a>
     </div>
 </div>

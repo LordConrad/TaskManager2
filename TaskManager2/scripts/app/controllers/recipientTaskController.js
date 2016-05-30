@@ -4,12 +4,33 @@
         '$scope',
         '$routeParams',
         'taskService',
+        'commentService',
         '$location',
-        function ($scope, $routeParams, taskService, $location) {
+        
+        function ($scope, $routeParams, taskService, commentService, $location) {
 
             $scope.backToList = function() {
                 $location.path('/myTasks');
             };
+
+            $scope.addComment = function (taskId, authorId, text) {
+                $scope.newComment = null;
+                commentService.addNewComment(taskId, authorId, new Date, text).then(function(response) {
+                    refreshComments();
+                });
+            }
+
+            function refreshTask() {
+                taskService.getMyTask($routeParams.taskId).then(function (response) {
+                    $scope.task = response.data;
+                });
+            }
+
+            function refreshComments() {
+                commentService.getTaskComments($routeParams.taskId).then(function(response) {
+                    $scope.comments = response.data;
+                });
+            }
 
 
             $scope.getStatusLabelStyle = function(complete, accept) {
@@ -24,9 +45,8 @@
                 }
             };
 
-            taskService.getMyTask($routeParams.taskId).then(function(response) {
-                $scope.task = response.data;
-            });
+            refreshTask();
+            refreshComments();
         }
     ]);
 })();
