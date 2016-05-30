@@ -1,51 +1,49 @@
 ﻿<div class="container margin-top-25">
-    <!--<div class="center-spinner">
-        <spinner name="myTasksSpinner"></spinner>
-    </div>-->
-    <table class="center-cells">
-        <tr>
-            <td><b>Отправил: </b>{{task.SenderName}}</td>
-            <td><b>Адресована: </b>{{task.AssignDateTime | date: 'dd.MM.yyyy HH:mm'}}</td>
-            <td><b>Выполнить до: </b>{{task.Deadline | date: 'dd.MM.yyyy'}}</td>
-        </tr>
-    </table>
-    <div class="panel panel-primary margin-top-20">
-        <div class="panel-heading">Заявка #{{task.Id}}</div>
-        <div class="panel-body">{{task.Text}}</div>
+    <div class="center-spinner">
+        <spinner name="myTasksSpinner" show="!task"></spinner>
     </div>
-    <table class="center-cells">
-        <tr>
-            <td>
+    <div ng-show="task">
+        <div class="row">
+            <div class="col-md-4 col-sm-4"><b>Отправил: </b>{{task.SenderName}}</div>
+            <div class="col-md-4 col-sm-4 text-center left-if-small"><b>Адресована: </b>{{task.AssignDateTime | date: 'dd.MM.yyyy HH:mm'}}</div>
+            <div class="col-md-4 col-sm-4 text-right left-if-small"><b>Выполнить до: </b>{{task.Deadline | date: 'dd.MM.yyyy'}}</div>
+        </div>
+        <div class="panel panel-primary margin-top-20">
+            <div class="panel-heading">Заявка #{{task.Id}}</div>
+            <div class="panel-body">{{task.Text}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
                 <b>Статус: </b>
                 <span ng-style="getStatusLabelStyle(task.CompleteDateTime, task.AcceptCompleteDateTime)"><b>{{task.AcceptCompleteDateTime ? 'Подтверждена ' + (task.AcceptCompleteDateTime | date: 'dd.MM.yyyy HH:mm') : (task.CompleteDateTime ? 'Выполнена ' + (taskCompleteDatetime | date: 'dd.MM.yyyy HH:mm') : 'Не выполнена')}}</b></span>
-            </td>
-            <td></td>
-            <td>
-                <button class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> &nbsp;Выполнено</button>
-            </td>
-        </tr>
-    </table>
-    <div class="comments-block form-group margin-top-20">
+            </div>
+            <div class="col-md-4 col-sm-4 text-center left-if-small"><b>Приоритет: </b>{{task.PriorityName}}</div>
+            <div class="col-md-4 col-sm-4 text-right">
+                <button class="btn btn-primary widht-120 "><span class="glyphicon glyphicon-ok"></span> &nbsp;Выполнено</button>
+            </div>
+        </div>
+        <div class="comments-block form-group margin-top-20">
+            <div>
+                <label class="margin-bottom-0">Комментарии:</label>
+                <div class="no-comments" ng-show="comments.length == 0">Комментариев нет</div>
+                <div ng-repeat="comment in comments" class="comment-container">
+                    <div class="comment-author">{{comment.AuthorName}}</div>
+                    <div class="comment-date">{{comment.CommentDate | date: "dd.MM.yyyy HH:mm"}}</div>
+                    <div class="comment-text">{{comment.CommentText}}</div>
+                </div>
+            </div>
+            <div class="new-comment form-group margin-top-25">
+                <label for="new-comment">Новый комментарий:</label>
+                <textarea ng-model="newComment" class="form-control textarea-maxwidth" rows="5" id="new-comment" ng-disable="addingComment"></textarea>
+                <div class="right-button">
+                    <button type="button" id="addCommentBtn" class="btn btn-default widht-120" ng-disabled="!newComment || addingComment" ng-click="addComment();">{{addButtonText}}</button>
+                </div>
+            </div>
+
+        </div>
         <div>
-            <label>Комментарии:</label>
-            <div class="no-comments" ng-show="comments.length == 0">Комментариев нет</div>
-            <div ng-repeat="comment in comments" class="comment-container">
-                <div class="comment-author">{{comment.AuthorName}}</div>
-                <div class="comment-date">{{comment.CommentDate | date: "dd.MM.yyyy HH:mm"}}</div>
-                <div class="comment-text">{{comment.CommentText}}</div>
-            </div>
+            <span class="glyphicon glyphicon-arrow-left back-arrow-glyph"></span>
+            <a href="" ng-click="backToList()"> &nbsp;к списку заявок</a>
         </div>
-        <div class="new-comment form-group">
-            <label for="new-comment">Новый комментарий:</label>
-            <textarea ng-model="newComment" class="form-control" rows="5" id="new-comment"></textarea>
-            <div class="right-button">
-                <button class="btn btn-default" ng-disabled="!newComment" ng-click="addComment(task.Id, task.SenderId, newComment)">Добавить</button>
-            </div>
-        </div>
-        
-    </div>
-    <div>
-        <span class="glyphicon glyphicon-arrow-left back-arrow-glyph"></span>
-        <a href="" ng-click="backToList()"> &nbsp;к списку заявок</a>
     </div>
 </div>

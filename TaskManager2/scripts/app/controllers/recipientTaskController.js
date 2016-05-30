@@ -1,4 +1,4 @@
-﻿(function() {
+﻿(function () {
     angular.module('app.controllers').controller('recipientTaskController',
     [
         '$scope',
@@ -6,19 +6,27 @@
         'taskService',
         'commentService',
         '$location',
-        
+
         function ($scope, $routeParams, taskService, commentService, $location) {
 
-            $scope.backToList = function() {
+            $scope.backToList = function () {
                 $location.path('/myTasks');
             };
 
-            $scope.addComment = function (taskId, authorId, text) {
-                $scope.newComment = null;
-                commentService.addNewComment(taskId, authorId, new Date, text).then(function(response) {
+            $scope.addButtonText = "Добавить";
+            $scope.addingComment = false;
+
+            $scope.addComment = function () {
+                $scope.addingComment = true;
+                $scope.addButtonText = "Добавление...";
+                // TODO: use logged user id instead recipient ID
+                commentService.addNewComment($scope.task.Id, $scope.task.RecipientId, $scope.newComment).then(function (response) {
+                    $scope.newComment = null;
                     refreshComments();
+                    $scope.addingComment = false;
+                    $scope.addButtonText = "Добавить";
                 });
-            }
+            };
 
             function refreshTask() {
                 taskService.getMyTask($routeParams.taskId).then(function (response) {
@@ -27,13 +35,13 @@
             }
 
             function refreshComments() {
-                commentService.getTaskComments($routeParams.taskId).then(function(response) {
+                commentService.getTaskComments($routeParams.taskId).then(function (response) {
                     $scope.comments = response.data;
                 });
             }
 
 
-            $scope.getStatusLabelStyle = function(complete, accept) {
+            $scope.getStatusLabelStyle = function (complete, accept) {
                 if (accept) {
                     return { 'color': 'green' };
                 } else {

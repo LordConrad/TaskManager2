@@ -35,7 +35,7 @@ namespace TaskManager2.DataAccess.Services
                     task.Comments.Add(new EFModels.Comment
                     {
                         AuthorId = comment.AuthorId,
-                        CommentDate = comment.CommentDate,
+                        CommentDate = DateTime.Now,
                         CommentText = comment.CommentText,
                     });
                     context.SaveChanges();

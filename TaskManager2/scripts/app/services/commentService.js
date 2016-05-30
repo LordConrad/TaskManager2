@@ -15,7 +15,7 @@
                 });
             }
 
-            var addNewComment = function(taskId, authorId, date, text ) {
+            var addNewComment = function(taskId, authorId, text ) {
                 return $http({
                         method: 'POST',
                         url: serviceHostUrl + '/api/comment',
@@ -23,7 +23,6 @@
                         {
                             TaskId: taskId,
                             AuthorId: authorId,
-                            CommentDate: date,
                             CommentText: text
                         }),
                         headers: {

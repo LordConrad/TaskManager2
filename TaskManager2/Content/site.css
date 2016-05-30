@@ -23,6 +23,24 @@
     margin: 7px 0;
 }
 
+.margin-bottom-0 {
+    margin-bottom: 0 !important;
+}
+
+.widht-120 {
+    width: 120px;
+}
+
+@media(max-width: 767px) {
+    .left-if-small {
+        text-align: left !important;
+    }
+}
+
+.textarea-maxwidth {
+    max-width: 1140px;
+}
+
 .back-arrow-glyph {
     color: #337AB7;
     vertical-align: text-top;
