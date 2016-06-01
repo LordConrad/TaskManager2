@@ -1,4 +1,13 @@
-﻿.margin-top-20 {
+﻿@font-face {
+    font-family: 'Exo 2';
+    src: url(../fonts/Exo2/Exo2-Medium.ttf);
+}
+
+body {
+    font-family: 'Exo 2';
+}
+
+.margin-top-20 {
     margin-top: 20px;
 }
 

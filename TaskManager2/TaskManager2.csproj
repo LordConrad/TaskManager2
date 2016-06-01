@@ -117,6 +117,24 @@
     <Content Include="scripts\app\views\senderTasks.html" />
     <Content Include="scripts\jquery-1.9.1.min.map" />
     <Content Include="scripts\angular-resource.min.js.map" />
+    <Content Include="fonts\Exo2\Exo2-Black.ttf" />
+    <Content Include="fonts\Exo2\Exo2-BlackItalic.ttf" />
+    <Content Include="fonts\Exo2\Exo2-Bold.ttf" />
+    <Content Include="fonts\Exo2\Exo2-BoldItalic.ttf" />
+    <Content Include="fonts\Exo2\Exo2-ExtraBold.ttf" />
+    <Content Include="fonts\Exo2\Exo2-ExtraBoldItalic.ttf" />
+    <Content Include="fonts\Exo2\Exo2-ExtraLight.ttf" />
+    <Content Include="fonts\Exo2\Exo2-ExtraLightItalic.ttf" />
+    <Content Include="fonts\Exo2\Exo2-Italic.ttf" />
+    <Content Include="fonts\Exo2\Exo2-Light.ttf" />
+    <Content Include="fonts\Exo2\Exo2-LightItalic.ttf" />
+    <Content Include="fonts\Exo2\Exo2-Medium.ttf" />
+    <Content Include="fonts\Exo2\Exo2-MediumItalic.ttf" />
+    <Content Include="fonts\Exo2\Exo2-Regular.ttf" />
+    <Content Include="fonts\Exo2\Exo2-SemiBold.ttf" />
+    <Content Include="fonts\Exo2\Exo2-SemiBoldItalic.ttf" />
+    <Content Include="fonts\Exo2\Exo2-Thin.ttf" />
+    <Content Include="fonts\Exo2\Exo2-ThinItalic.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
