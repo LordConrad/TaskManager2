@@ -241,7 +241,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TaskController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Converters\ModelConverter.cs" />
+    <Compile Include="Converters\CommentConverter.cs" />
+    <Compile Include="Converters\RecipientTaskConverter.cs" />
+    <Compile Include="Converters\SenderTaskConverter.cs" />
     <Compile Include="EFModels\Comment.cs" />
     <Compile Include="EFModels\TaskManagerContext.cs" />
     <Compile Include="EFModels\Priority.cs" />
@@ -260,8 +262,8 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\MyTask.cs" />
-    <Compile Include="Models\MyTaskInList.cs" />
+    <Compile Include="Models\RecipientTask.cs" />
+    <Compile Include="Models\SenderTask.cs" />
     <Compile Include="Modules\OptionsModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />

@@ -15,10 +15,10 @@ namespace TaskManager2.DataAccess.Services
         {
             using (var context = new TaskManagerContext())
             {
-                var comments = context.Comments
+                return context.Comments
                     .Include(x => x.Author)
-                    .Where(x => x.TaskId == taskId).ToList();
-                return ModelConverter.Convert(comments);
+                    .Where(x => x.TaskId == taskId)
+                    .Select(CommentConverter.Convert);
             }
         }
 

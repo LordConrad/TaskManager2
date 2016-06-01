@@ -16,17 +16,26 @@ namespace TaskManager2.DataAccess.Controllers
             _taskService = new TaskService();
         }
 
-        [Route("api/task")]
-        public IEnumerable<MyTaskInList> Get()
+        [HttpGet]
+        [Route("api/recipientTasks")]
+        public IEnumerable<RecipientTask> GetRecipientTasks()
         {
-            var result = _taskService.GetMyTasks();
+            var result = _taskService.GetRecipientTasks();
             return result;
         }
 
-        [Route("api/task/{id:int}")]
-        public MyTask Get(int id)
+        [HttpGet]
+        [Route("api/recipientTask/{id:int}")]
+        public RecipientTask GetRecipientTask(int id)
         {
-            return _taskService.GetMyTask(id);
+            return _taskService.GetRecipientTask(id);
+        }
+
+        [HttpGet]
+        [Route("api/senderTasks/{senderId:int}")]
+        public IEnumerable<SenderTask> GetSenderTasks(int senderId)
+        {
+            return _taskService.GetSenderTasks(senderId);
         }
 
     }
