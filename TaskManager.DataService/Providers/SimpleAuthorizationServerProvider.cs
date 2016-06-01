@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security.OAuth;
 using TaskManager.DataService.Database;
+using TaskManager.DataService.Models;
 
 namespace TaskManager.DataService.Providers
 {
@@ -25,7 +26,7 @@ namespace TaskManager.DataService.Providers
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new [] {"*"});
             using (var _authRepository = new AuthRepository())
             {
-                IdentityUser user = await _authRepository.FindUser(context.UserName, context.Password);
+                ApplicationUser user = await _authRepository.FindUser(context.UserName, context.Password);
                 if (user == null)
                 {
                     context.SetError("invalid_grant", "The username or password is incorrect");
