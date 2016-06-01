@@ -7,6 +7,7 @@
     <script src="scripts/angular.js"></script>
     <script src="scripts/angular-route.js"></script>
     <script src="scripts/angular-resource.js"></script>
+    <script src="scripts/angular-local-storage.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
     <script src="scripts/angular-ui/ui-bootstrap.min.js"></script>
@@ -20,7 +21,6 @@
     <script src="scripts/app/services/commentService.js"></script>
     <script src="scripts/app/controllers/myTasksController.js"></script>
     <script src="scripts/app/controllers/recipientTaskController.js"></script>
-    <script src="scripts/app/controllers/senderTaskController.js"></script>
 
 
 
@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="Content/site.css"/>
 
 </head>
-<body ng-app="app">
+<body ng-app="app" ng-cloak>
     
         <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
             <div class="container">
@@ -49,8 +49,8 @@
                 <div class="navbar-collapse collapse" ng-class="!navCollapsed && 'in'">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="">Входящие заявки</a></li>
-                        <li><a href="/senderTasks">Исходящие заявки</a></li>
-                <li><a href="">Link</a></li>
+                        <li><a href="">Исходящие заявки</a></li>
+                <!--<li><a href="">Link</a></li>
                 <li class="dropdown">
                     <a href="" data-toggle="dropdown" class="dropdown-toggle">Dropdown <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -60,7 +60,7 @@
                         <li><a href="">Separated link</a></li>
                         <li><a href="">One more separated link</a></li>
                     </ul>
-                </li>
+                </li>-->
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">

@@ -77,7 +77,6 @@ C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager.D
 C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager.DataService\bin\System.Net.Http.Formatting.xml
 C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager.DataService\bin\System.Web.Http.xml
 C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager.DataService\bin\System.Web.Http.WebHost.xml
-C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager.DataService\obj\Debug\TaskManager.DataService.csprojResolveAssemblyReference.cache
 C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager.DataService\obj\Debug\TaskManager.DataService.dll
 C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager.DataService\obj\Debug\TaskManager.DataService.pdb
 C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager.DataService\bin\Microsoft.Owin.Cors.dll
@@ -168,3 +167,4 @@ D:\Projects\TaskManager2\TaskManager.DataService\bin\System.Web.Http.xml
 D:\Projects\TaskManager2\TaskManager.DataService\bin\System.Web.Http.WebHost.xml
 D:\Projects\TaskManager2\TaskManager.DataService\obj\Debug\TaskManager.DataService.dll
 D:\Projects\TaskManager2\TaskManager.DataService\obj\Debug\TaskManager.DataService.pdb
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager.DataService\obj\Debug\TaskManager.DataService.csprojResolveAssemblyReference.cache

@@ -3,16 +3,17 @@
         <spinner name="myTasksSpinner"></spinner>
     </div>
     <div class="form-group has-feedback has-clear">
-        <input class="form-control margin-top-bottom-15" type="text" ng-model="filter.Text" />
+        <input class="form-control margin-top-bottom-15" type="text" ng-model="filter.Text"/>
         <a class="glyphicon glyphicon-remove form-control-feedback form-control-clear" ng-show="filter.Text" ng-click="filter.Text = ''" style="pointer-events: auto; text-decoration: none; cursor: pointer;"></a>
     </div>
+
     <table ng-table="tableParams" class="table table-bordered table-striped table-condensed">
-        <tr ng-repeat="task in $data" ng-click="showTask(task.Id)">
-            <td data-title="'#'" sortable="'Id'">{{task.Id}}</td>
-            <td data-title="'Текст'" sortable="'Text'">{{task.Text}}</td>
-            <td data-title="'Создал'" sortable="'Sender'">{{task.Sender}}</td>
-            <td data-title="'Дата назначения'" sortable="'AssignDateTime'">{{task.AssignDateTime | date: 'dd.MM.yyyy HH:mm'}}</td>
-            <td data-title="'Выполнить до'" sortable="'Deadline'" >{{task.Deadline | date: 'dd.MM.yyyy'}}</td>
+        <tr ng-repeat="task in $data" ng-click="showTask(task.id)">
+            <td data-title="'#'" sortable="'Id'">{{task.id}}</td>
+            <td data-title="'Текст'" sortable="'Text'">{{task.text}}</td>
+            <td data-title="'Создал'" sortable="'Sender'">{{task.senderName}}</td>
+            <td data-title="'Дата назначения'" sortable="'AssignDateTime'">{{task.assignDateTime | date: 'dd.MM.yyyy HH:mm'}}</td>
+            <td data-title="'Выполнить до'" sortable="'Deadline'">{{task.deadline | date: 'dd.MM.yyyy'}}</td>
         </tr>
     </table>
 </div>

@@ -41,7 +41,7 @@
                 //spinnerService.show('myTaskSpinner');
                 return $http({
                     method: 'GET',
-                    url: serviceHostUrl + '/api/task/' + taskId
+                    url: serviceHostUrl + '/api/recipientTask/' + taskId
                 }).success(function(data, status) {
                     return data;
                 }).error(function(data, status) {
@@ -55,7 +55,7 @@
                 spinnerService.show('myTasksSpinner');
                 $http({
                     method: 'GET',
-                    url: serviceHostUrl + '/api/task'
+                    url: serviceHostUrl + '/api/recipientTasks'
 
                 }).success(function (data, status) {
 

@@ -4,20 +4,20 @@
     </div>
     <div ng-show="task">
         <div class="row">
-            <div class="col-md-4 col-sm-4"><b>Отправил: </b>{{task.SenderName}}</div>
-            <div class="col-md-4 col-sm-4 text-center left-if-small"><b>Адресована: </b>{{task.AssignDateTime | date: 'dd.MM.yyyy HH:mm'}}</div>
-            <div class="col-md-4 col-sm-4 text-right left-if-small"><b>Выполнить до: </b>{{task.Deadline | date: 'dd.MM.yyyy'}}</div>
+            <div class="col-md-4 col-sm-4"><b>Отправил: </b>{{task.senderName}}</div>
+            <div class="col-md-4 col-sm-4 text-center left-if-small"><b>Адресована: </b>{{task.assignDateTime | date: 'dd.MM.yyyy HH:mm'}}</div>
+            <div class="col-md-4 col-sm-4 text-right left-if-small"><b>Выполнить до: </b>{{task.deadline | date: 'dd.MM.yyyy'}}</div>
         </div>
         <div class="panel panel-primary margin-top-20">
-            <div class="panel-heading">Заявка #{{task.Id}}</div>
-            <div class="panel-body">{{task.Text}}</div>
+            <div class="panel-heading">Заявка #{{task.id}}</div>
+            <div class="panel-body">{{task.text}}</div>
         </div>
         <div class="row">
             <div class="col-md-4 col-sm-4">
                 <b>Статус: </b>
-                <span ng-style="getStatusLabelStyle(task.CompleteDateTime, task.AcceptCompleteDateTime)"><b>{{task.AcceptCompleteDateTime ? 'Подтверждена ' + (task.AcceptCompleteDateTime | date: 'dd.MM.yyyy HH:mm') : (task.CompleteDateTime ? 'Выполнена ' + (taskCompleteDatetime | date: 'dd.MM.yyyy HH:mm') : 'Не выполнена')}}</b></span>
+                <span ng-style="getStatusLabelStyle(task.completeDateTime, task.acceptCompleteDateTime)"><b>{{task.acceptCompleteDateTime ? 'Подтверждена ' + (task.acceptCompleteDateTime | date: 'dd.MM.yyyy HH:mm') : (task.CompleteDateTime ? 'Выполнена ' + (task.completeDatetime | date: 'dd.MM.yyyy HH:mm') : 'Не выполнена')}}</b></span>
             </div>
-            <div class="col-md-4 col-sm-4 text-center left-if-small"><b>Приоритет: </b>{{task.PriorityName}}</div>
+            <div class="col-md-4 col-sm-4 text-center left-if-small"><b>Приоритет: </b>{{task.priorityName}}</div>
             <div class="col-md-4 col-sm-4 text-right">
                 <button class="btn btn-primary widht-120 "><span class="glyphicon glyphicon-ok"></span> &nbsp;Выполнено</button>
             </div>
@@ -27,9 +27,9 @@
                 <label class="margin-bottom-0">Комментарии:</label>
                 <div class="no-comments" ng-show="comments.length == 0">Комментариев нет</div>
                 <div ng-repeat="comment in comments" class="comment-container">
-                    <div class="comment-author">{{comment.AuthorName}}</div>
-                    <div class="comment-date">{{comment.CommentDate | date: "dd.MM.yyyy HH:mm"}}</div>
-                    <div class="comment-text">{{comment.CommentText}}</div>
+                    <div class="comment-author">{{comment.authorName}}</div>
+                    <div class="comment-date">{{comment.commentDate | date: "dd.MM.yyyy HH:mm"}}</div>
+                    <div class="comment-text">{{comment.commentText}}</div>
                 </div>
             </div>
             <div class="new-comment form-group margin-top-25">

@@ -33,7 +33,9 @@
             });
 
             $scope.$watch("filter.Text", function () {
-                $scope.tableParams.reload();
+                if ($scope.filter) {
+                    $scope.tableParams.reload();
+                }
             });
         }
     ]);

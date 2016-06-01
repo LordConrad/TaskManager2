@@ -220,6 +220,11 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\TaskController.cs" />
+    <Compile Include="Converters\CommentConverter.cs" />
+    <Compile Include="Converters\RecipientTaskConverter.cs" />
+    <Compile Include="Converters\SenderTaskConverter.cs" />
     <Compile Include="Database\ApplicationUserManager.cs" />
     <Compile Include="Database\AuthContext.cs" />
     <Compile Include="Database\AuthRepository.cs" />
@@ -235,10 +240,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\RecipientTask.cs" />
+    <Compile Include="Models\SenderTask.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\SimpleAuthorizationServerProvider.cs" />
+    <Compile Include="Services\CommentService.cs" />
+    <Compile Include="Services\ICommentService.cs" />
+    <Compile Include="Services\ITaskService.cs" />
+    <Compile Include="Services\TaskService.cs" />
+    <Compile Include="Utilities\CacheControlAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -275,7 +289,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>13717</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:13717/</IISUrl>
+          <IISUrl>http://localhost:1135/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

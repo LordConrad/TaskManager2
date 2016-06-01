@@ -9,7 +9,7 @@ namespace TaskManager.DataService.Database
 {
     public class AuthContext : IdentityDbContext<ApplicationUser, ApplicationRole, int, ApplicationUserLogin, ApplicationUserRole, ApplicationUserClaim>
     {
-        public AuthContext() : base("AuthContext")
+        public AuthContext() : base("DefaultConnection")
         {
             
         }

@@ -101,6 +101,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="scripts\angular-local-storage.js" />
+    <Content Include="scripts\angular-local-storage.min.js" />
     <Content Include="scripts\angular-resource.js" />
     <Content Include="scripts\angular-resource.min.js" />
     <Content Include="scripts\angular-ui\ui-bootstrap-tpls.js" />
@@ -111,6 +113,7 @@
     <Content Include="scripts\angular-route.min.js.map" />
     <Content Include="scripts\app\controllers\recipientTaskController.js" />
     <Content Include="scripts\app\controllers\senderTasksController.js" />
+    <Content Include="scripts\app\services\authService.js" />
     <Content Include="scripts\app\services\commentService.js" />
     <Content Include="scripts\app\services\taskService.js" />
     <Content Include="scripts\app\views\recipientTask.html" />
@@ -135,6 +138,7 @@
     <Content Include="fonts\Exo2\Exo2-SemiBoldItalic.ttf" />
     <Content Include="fonts\Exo2\Exo2-Thin.ttf" />
     <Content Include="fonts\Exo2\Exo2-ThinItalic.ttf" />
+    <Content Include="scripts\angular-local-storage.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

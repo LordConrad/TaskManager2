@@ -7,7 +7,8 @@
             'angularSpinners',
             'app.services',
             'ngTable',
-            'ngResource'
+            'ngResource',
+            'LocalStorageModule'
         ]);
 
     angular.module('app.controllers', []);
