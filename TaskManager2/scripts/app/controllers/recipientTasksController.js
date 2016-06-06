@@ -1,5 +1,5 @@
 ﻿(function () {
-    angular.module('app.controllers').controller('myTasksController',
+    angular.module('app.controllers').controller('recipientTasksController',
     [
         '$scope',
         'ngTableParams',
@@ -16,6 +16,8 @@
             //    return null;
             //};
 
+            $scope.loading = false;
+
             $scope.showTask = function(id) {
                 $location.path('/recipientTask/' + id);
             };
@@ -28,7 +30,8 @@
             }, {
                 total: 0,
                 getData: function ($defer, params) {
-                    taskService.getMyTasks($defer, params, $scope.filter);
+                    var filterText = $scope.filter ? $scope.filter.Text : '';
+                    taskService.getRecipientTasks($defer, params, filterText, $scope.loading);
                 }
             });
 

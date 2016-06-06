@@ -18,9 +18,9 @@
     app.config([
         '$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
             $routeProvider.
-                when('/myTasks', {
-                    templateUrl: 'scripts/app/views/myTasks.html',
-                    controller: 'myTasksController'
+                when('/recipientTasks', {
+                    templateUrl: 'scripts/app/views/recipientTasks.html',
+                    controller: 'recipientTasksController'
                 }).
                 when('/recipientTask/:taskId', {
                     templateUrl: 'scripts/app/views/recipientTask.html',
@@ -31,7 +31,7 @@
                     controller: 'senderTasksController'
                 }).
                 otherwise({
-                    redirectTo: '/myTasks'
+                    redirectTo: '/recipientTasks'
                 });
         }
 

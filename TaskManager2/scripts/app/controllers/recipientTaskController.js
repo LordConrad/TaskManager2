@@ -29,8 +29,10 @@
             };
 
             function refreshTask() {
-                taskService.getMyTask($routeParams.taskId).then(function (response) {
+                $scope.loading = true;
+                taskService.getRecipientTask($routeParams.taskId).then(function (response) {
                     $scope.task = response.data;
+                    $scope.loading = false;
                 });
             }
 

@@ -4,7 +4,11 @@
 }
 
 body {
-    font-family: 'Exo 2';
+    /*font-family: 'Exo 2';*/
+}
+
+.padding-top-20 {
+    padding-top: 20px;
 }
 
 .margin-top-20 {
@@ -34,6 +38,14 @@ body {
 
 .margin-bottom-0 {
     margin-bottom: 0 !important;
+}
+
+.margin-bottom-50 {
+    margin-bottom: 50px;
+}
+
+.margin-bottom-25 {
+    margin-bottom: 25px;
 }
 
 .widht-120 {

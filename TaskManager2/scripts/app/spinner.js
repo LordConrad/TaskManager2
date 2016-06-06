@@ -15,12 +15,14 @@
                 onHide: '&?'
             },
             template: [
-                '<div class="outerBox" ng-show="show">',
+                '<div class="center-spinner" ng-show="show">',
+                '<div class="outerBox">',
                     '<div class="overlay"></div>',
                         '<div class="spinner">', 
                             '<div class="double-bounce1"></div>',
                         '<div class="double-bounce2"></div>',
                     '</div>',
+                '</div>',
                 '</div>'
           ].join(''),
           controller: function ($scope, spinnerService) {

@@ -1,7 +1,6 @@
-﻿<div class="container margin-top-25">
-    <div class="center-spinner">
-        <spinner name="myTasksSpinner" show="!task"></spinner>
-    </div>
+﻿<spinner name="spinner"></spinner>
+<div class="container padding-top-20">
+    
     <div ng-show="task">
         <div class="row">
             <div class="col-md-4 col-sm-4"><b>Отправил: </b>{{task.senderName}}</div>
@@ -41,7 +40,7 @@
             </div>
 
         </div>
-        <div>
+        <div class="margin-bottom-25">
             <span class="glyphicon glyphicon-arrow-left back-arrow-glyph"></span>
             <a href="" ng-click="backToList()"> &nbsp;к списку заявок</a>
         </div>

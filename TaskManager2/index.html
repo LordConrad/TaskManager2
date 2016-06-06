@@ -12,18 +12,15 @@
     <script src="scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
     <script src="scripts/angular-ui/ui-bootstrap.min.js"></script>
 
-
     <script src="scripts/app/app.js"></script>
     <script src="scripts/ng-table.js"></script>
     <script src="scripts/app/spinner.js"></script>
     <script src="scripts/app/services/spinnerService.js"></script>
     <script src="scripts/app/services/taskService.js"></script>
     <script src="scripts/app/services/commentService.js"></script>
-    <script src="scripts/app/controllers/myTasksController.js"></script>
+    <script src="scripts/app/controllers/recipientTasksController.js"></script>
     <script src="scripts/app/controllers/recipientTaskController.js"></script>
-
-
-
+    <script src="scripts/app/controllers/signUpController.js"></script>
 
     <link rel="stylesheet" href="Content/bootstrap.css"/>
     <link rel="stylesheet" href="Content/bootstrap-theme.css" />
@@ -32,8 +29,7 @@
     <link rel="stylesheet" href="Content/site.css"/>
 
 </head>
-<body ng-app="app" ng-cloak>
-    
+<body ng-app="app" class="margin-top-50" ng-cloak>
         <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -80,7 +76,7 @@
             </div>
 </nav>
     
-<div class="container-fluid margin-top-50" ng-view></div>
+<div ng-view></div>
 
 </body>
 </html>

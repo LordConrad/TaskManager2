@@ -113,6 +113,7 @@
     <Content Include="scripts\angular-route.min.js.map" />
     <Content Include="scripts\app\controllers\recipientTaskController.js" />
     <Content Include="scripts\app\controllers\senderTasksController.js" />
+    <Content Include="scripts\app\controllers\signUpController.js" />
     <Content Include="scripts\app\services\authService.js" />
     <Content Include="scripts\app\services\commentService.js" />
     <Content Include="scripts\app\services\taskService.js" />
@@ -171,10 +172,10 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="scripts\app\app.js" />
-    <Content Include="scripts\app\controllers\myTasksController.js" />
+    <Content Include="scripts\app\controllers\recipientTasksController.js" />
     <Content Include="scripts\app\services\spinnerService.js" />
     <Content Include="scripts\app\spinner.js" />
-    <Content Include="scripts\app\views\myTasks.html" />
+    <Content Include="scripts\app\views\recipientTasks.html" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\jquery-1.9.1.js" />
