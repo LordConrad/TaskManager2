@@ -19,7 +19,8 @@ namespace TaskManager.DataService.Controllers
         [Route("api/comment/{id:int}")]
         public IEnumerable<Comment> Get(int id)
         {
-            return _commentService.GetTaskComments(id);
+            var res = _commentService.GetTaskComments(id);
+            return res;
         } 
 
         public bool Post(Comment comment)

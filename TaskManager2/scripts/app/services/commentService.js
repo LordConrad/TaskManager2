@@ -1,10 +1,11 @@
 ﻿(function() {
     angular.module('app.services').factory('commentService', [
         '$http',
-        function($http) {
+        '$rootScope',
+        function($http, $rootScope) {
             var serviceHostUrl = 'http://localhost:1135';
 
-            var getTaskComments = function(taskId) {
+            var getTaskComments = function (taskId) {
                 return $http({
                     method: 'GET',
                     url: serviceHostUrl + '/api/comment/' + taskId
@@ -12,6 +13,7 @@
                     return data;
                 }).error(function(error) {
                     alert('error getting comments');
+                }).finally(function() {
                 });
             }
 

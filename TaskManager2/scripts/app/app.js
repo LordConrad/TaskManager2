@@ -4,7 +4,6 @@
             'ngRoute',
             'ui.bootstrap',
             'app.controllers',
-            'angularSpinners',
             'app.services',
             'ngTable',
             'ngResource',
@@ -13,11 +12,16 @@
 
     angular.module('app.controllers', []);
     angular.module('app.services', []);
-    angular.module('angularSpinners', []);
 
     app.config([
-        '$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+        '$routeProvider',
+        '$httpProvider',
+        function($routeProvider, $httpProvider) {
             $routeProvider.
+                when('/login', {
+                    templateUrl: 'scripts/app/views/login.html',
+                    controller: 'loginController'
+                }).
                 when('/recipientTasks', {
                     templateUrl: 'scripts/app/views/recipientTasks.html',
                     controller: 'recipientTasksController'
@@ -33,9 +37,15 @@
                 otherwise({
                     redirectTo: '/recipientTasks'
                 });
+            $httpProvider.interceptors.push('authInterceptorService');
         }
 
     ]);
 
-    
+    angular.module('app').run([
+        '$rootScope', function ($rootScope) {
+            $rootScope.loading = false;
+        }
+    ]);
+
 })();

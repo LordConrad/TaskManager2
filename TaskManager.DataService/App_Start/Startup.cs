@@ -16,8 +16,8 @@ namespace TaskManager.DataService.App_Start
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureOAuth(app);
             HttpConfiguration config = new HttpConfiguration();
+            ConfigureOAuth(app);
             WebApiConfig.Register(config);
             app.UseCors(CorsOptions.AllowAll);
             app.UseWebApi(config);

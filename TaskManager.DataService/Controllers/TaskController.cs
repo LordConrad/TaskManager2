@@ -6,6 +6,7 @@ using TaskManager.DataService.Utilities;
 
 namespace TaskManager.DataService.Controllers
 {
+    [Authorize]
     [CacheControl(MaxAge = 3)]
     public class TaskController : ApiController
     {
@@ -17,6 +18,7 @@ namespace TaskManager.DataService.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Recipient")]
         [Route("api/recipientTasks")]
         public IEnumerable<RecipientTask> GetRecipientTasks()
         {

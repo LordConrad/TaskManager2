@@ -20,7 +20,7 @@
                 $scope.addingComment = true;
                 $scope.addButtonText = "Добавление...";
                 // TODO: use logged user id instead recipient ID
-                commentService.addNewComment($scope.task.Id, $scope.task.RecipientId, $scope.newComment).then(function (response) {
+                commentService.addNewComment($scope.task.id, $scope.task.recipientId, $scope.newComment).then(function (response) {
                     $scope.newComment = null;
                     refreshComments();
                     $scope.addingComment = false;

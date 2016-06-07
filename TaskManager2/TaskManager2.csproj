@@ -94,6 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\44.gif" />
     <Content Include="Content\ng-table.css" />
     <Content Include="Content\site.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
@@ -111,12 +112,15 @@
     <Content Include="scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="scripts\angular.min.js.map" />
     <Content Include="scripts\angular-route.min.js.map" />
+    <Content Include="scripts\app\controllers\loginController.js" />
     <Content Include="scripts\app\controllers\recipientTaskController.js" />
     <Content Include="scripts\app\controllers\senderTasksController.js" />
     <Content Include="scripts\app\controllers\signUpController.js" />
+    <Content Include="scripts\app\services\authInterceptorService.js" />
     <Content Include="scripts\app\services\authService.js" />
     <Content Include="scripts\app\services\commentService.js" />
     <Content Include="scripts\app\services\taskService.js" />
+    <Content Include="scripts\app\views\login.html" />
     <Content Include="scripts\app\views\recipientTask.html" />
     <Content Include="scripts\app\views\senderTasks.html" />
     <Content Include="scripts\jquery-1.9.1.min.map" />
@@ -173,8 +177,6 @@
     <None Include="scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="scripts\app\app.js" />
     <Content Include="scripts\app\controllers\recipientTasksController.js" />
-    <Content Include="scripts\app\services\spinnerService.js" />
-    <Content Include="scripts\app\spinner.js" />
     <Content Include="scripts\app\views\recipientTasks.html" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />

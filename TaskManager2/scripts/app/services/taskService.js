@@ -1,9 +1,9 @@
 ﻿(function () {
     angular.module('app.services').factory('taskService', [
         '$http',
-        'spinnerService',
         '$filter',
-        function ($http, spinnerService, $filter) {
+        '$rootScope',
+        function ($http, $filter, $rootScope) {
 
             var serviceHostUrl = 'http://localhost:1135';
             //var serviceHostUrl = 'http://10.10.4.110/TaskManager2.DataAccess';
@@ -38,7 +38,7 @@
             }
 
             var getRecipientTask = function(taskId) {
-                //spinnerService.show('myTaskSpinner');
+                $rootScope.loading = true;
                 return $http({
                     method: 'GET',
                     url: serviceHostUrl + '/api/recipientTask/' + taskId
@@ -47,12 +47,12 @@
                 }).error(function(data, status) {
                     alert('error');
                 }).finally(function() {
-                    //spinnerService.hide('myTaskSpinner');
+                    $rootScope.loading = false;
                 });
             };
 
             var getRecipientTasks = function ($defer, params, filter) {
-                spinnerService.show('spinner');
+                $rootScope.loading = true;
                 $http({
                     method: 'GET',
                     url: serviceHostUrl + '/api/recipientTasks'
@@ -67,7 +67,7 @@
                 }).error(function (data, status) {
                     alert('error');
                 }).finally(function () {
-                    spinnerService.hide('spinner');
+                    $rootScope.loading = false;
                 });
             };
 
