@@ -7,6 +7,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
+using TaskManager.DataService.Database;
 using TaskManager.DataService.Providers;
 
 [assembly: OwinStartup(typeof(TaskManager.DataService.App_Start.Startup))]
@@ -32,7 +33,7 @@ namespace TaskManager.DataService.App_Start
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(10000),
                 Provider = new SimpleAuthorizationServerProvider()
             };
-
+            //app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
             app.UseOAuthAuthorizationServer(oAuthAuthorizationServerOptions);
             app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
         }

@@ -33,7 +33,8 @@
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
-                }).success(function(response) {
+                }).success(function (response) {
+                    localStorageService.set('authorizationData', { token: response.access_token, userName: loginData.username });
                     authentication.isAuth = true;
                     authentication.username = loginData.username;
                     deffered.resolve(response);

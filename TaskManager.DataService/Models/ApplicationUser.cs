@@ -10,27 +10,27 @@ using TaskManager.DataService.Database;
 
 namespace TaskManager.DataService.Models
 {
-    public class ApplicationUser : IdentityUser<int, ApplicationUserLogin, ApplicationUserRole, ApplicationUserClaim>
+    public class ApplicationUser : IdentityUser<Int32, ApplicationUserLogin, ApplicationUserRole, ApplicationUserClaim>
     {
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser, int> manager)
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser, Int32> manager)
         {
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             return userIdentity;
         }
     }
 
-    public class ApplicationUserLogin : IdentityUserLogin<int> { }
-    public class ApplicationUserRole : IdentityUserRole<int> { }
-    public class ApplicationUserClaim : IdentityUserClaim<int> { }
+    public class ApplicationUserLogin : IdentityUserLogin<Int32> { }
+    public class ApplicationUserRole : IdentityUserRole<Int32> { }
+    public class ApplicationUserClaim : IdentityUserClaim<Int32> { }
 
-    public class ApplicationRole : IdentityRole<int, ApplicationUserRole>
+    public class ApplicationRole : IdentityRole<Int32, ApplicationUserRole>
     {
         public ApplicationRole() { }
 
         public ApplicationRole(string name) { Name = name; }
     }
 
-    public class ApplicationUserStore : UserStore<ApplicationUser, ApplicationRole, int, ApplicationUserLogin, ApplicationUserRole, ApplicationUserClaim>
+    public class ApplicationUserStore : UserStore<ApplicationUser, ApplicationRole, Int32, ApplicationUserLogin, ApplicationUserRole, ApplicationUserClaim>
     {
         public ApplicationUserStore(AuthContext context)
             : base(context)
@@ -38,7 +38,7 @@ namespace TaskManager.DataService.Models
         }
     }
 
-    public class ApplicationRoleStore : RoleStore<ApplicationRole, int, ApplicationUserRole>
+    public class ApplicationRoleStore : RoleStore<ApplicationRole, Int32, ApplicationUserRole>
     {
         public ApplicationRoleStore(AuthContext context)
             : base(context)

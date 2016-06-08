@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNet.Identity;
@@ -14,11 +15,16 @@ namespace TaskManager.DataService.Database
     {
         private readonly AuthContext _context;
         private readonly ApplicationUserManager _userManager;
-
+        
         public AuthRepository()
         {
             _context = new AuthContext();
             _userManager = new ApplicationUserManager(new ApplicationUserStore(_context));
+        }
+
+        public Task<ClaimsIdentity> CreateIdentityAsync(ApplicationUser user, string authType)
+        {
+            return _userManager.CreateIdentityAsync(user, authType);
         }
 
         public async Task<IdentityResult> RegisterUser(UserModel userModel)
@@ -34,8 +40,16 @@ namespace TaskManager.DataService.Database
 
         public async Task<ApplicationUser> FindUser(string username, string password)
         {
-            ApplicationUser user = await _userManager.FindAsync(username, password);
-            return user;
+            try
+            {
+                ApplicationUser user = await _userManager.FindAsync(username, password);
+                return user;
+            }
+            catch (Exception ex)
+            {
+                
+            }
+            return null;
         }
 
         public void Dispose()
