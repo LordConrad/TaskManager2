@@ -22,7 +22,14 @@ namespace TaskManager.DataService.Providers
             context.Validated();
         }
 
-
+        public override Task TokenEndpoint(OAuthTokenEndpointContext context)
+        {
+            foreach (KeyValuePair<string, string> property in context.Properties.Dictionary)
+            {
+                context.AdditionalResponseParameters.Add(property.Key, property.Value);
+            }
+            return Task.FromResult<object>(null);
+        }
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
@@ -41,16 +48,16 @@ namespace TaskManager.DataService.Providers
                 List<Claim> roles = oAuthIdentity.Claims.Where(c => c.Type == ClaimTypes.Role).ToList();
                 AuthenticationProperties properties = CreateProperties(user.UserName, Newtonsoft.Json.JsonConvert.SerializeObject(roles.Select(x => x.Value)));
                 AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
-                context.Validated(ticket);
+            //    context.Validated(ticket);
 
-            //    identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
-            //    foreach (Claim role in roles)
-            //    {
-            //        identity.AddClaim(new Claim(ClaimTypes.Role, role.Value));
-            //    }
+                identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
+                foreach (Claim role in roles)
+                {
+                    identity.AddClaim(new Claim(ClaimTypes.Role, role.Value));
+                }
             }
 
-            //context.Validated(identity);
+            context.Validated(identity);
         }
 
         public static AuthenticationProperties CreateProperties(string userName, string Roles)
