@@ -8,13 +8,17 @@
             var authServiceFactory = {};
             var authentication = {
                 isAuth: false,
-                username: ''
+                username: '',
+                userId: '',
+                userRoles: []
             };
 
             var logOut = function () {
                 localStorageService.remove('authorizationData');
                 authentication.isAuth = false;
                 authentication.username = "";
+                authentication.userId = "";
+                authentication.userRoles = [];
             };
 
             var saveRegistration = function(registration) {
@@ -34,9 +38,16 @@
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 }).success(function (response) {
-                    localStorageService.set('authorizationData', { token: response.access_token, userName: loginData.username });
                     authentication.isAuth = true;
-                    authentication.username = loginData.username;
+                    authentication.userId = response.userId;
+                    authentication.username = response.userName;
+                    authentication.userRoles = response.userRoles;
+                    localStorageService.set('authorizationData', {
+                        token: response.access_token,
+                        username: response.userName,
+                        userId: response.userId,
+                        userRoles: response.userRoles
+                    });
                     deffered.resolve(response);
                 }).error(function(err, status) {
                     logOut();
@@ -50,14 +61,18 @@
                 if (authData) {
                     authentication.isAuth = true;
                     authentication.username = authData.username;
+                    authentication.userId = authData.userId;
+                    authentication.userRoles = authData.userRoles;
                 }
             };
+
+            fillAuthData();
 
             authServiceFactory.saveRegistration = saveRegistration;
             authServiceFactory.login = login;
             authServiceFactory.logOut = logOut;
             authServiceFactory.fillAuthData = fillAuthData;
-            authServiceFactory.authentication = authentication;
+            authServiceFactory.authData = authentication;
 
             return authServiceFactory;
         }

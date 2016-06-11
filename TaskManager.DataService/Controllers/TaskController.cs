@@ -19,10 +19,11 @@ namespace TaskManager.DataService.Controllers
 
         [HttpGet]
         [Authorize(Roles = "Recipient")]
-        [Route("api/recipientTasks")]
-        public IEnumerable<RecipientTask> GetRecipientTasks()
+        [Route("api/recipientTasks/{id:int}")]
+        public IEnumerable<RecipientTask> GetRecipientTasks(int id)
         {
-            var result = _taskService.GetRecipientTasks();
+
+            var result = _taskService.GetRecipientTasks(id);
             return result;
         }
 

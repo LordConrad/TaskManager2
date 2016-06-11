@@ -5,7 +5,8 @@
         'ngTableParams',
         'taskService',
         '$location',
-        function ($scope, NgTableParams, taskService, $location) {
+        'authService',
+        function ($scope, NgTableParams, taskService, $location, authService) {
 
             //$scope.checkDeadline = function (deadline) {
             //    if (deadline) {
@@ -15,8 +16,6 @@
             //    }
             //    return null;
             //};
-
-            $scope.loading = false;
 
             $scope.showTask = function(id) {
                 $location.path('/recipientTask/' + id);
@@ -31,7 +30,7 @@
                 total: 0,
                 getData: function ($defer, params) {
                     var filterText = $scope.filter ? $scope.filter.Text : '';
-                    taskService.getRecipientTasks($defer, params, filterText, $scope.loading);
+                    taskService.getRecipientTasks($defer, params, filterText, authService.authData.userId);
                 }
             });
 

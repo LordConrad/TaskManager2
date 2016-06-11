@@ -5,7 +5,7 @@ namespace TaskManager.DataService.Services
 {
     public interface ITaskService
     {
-        IEnumerable<RecipientTask> GetRecipientTasks();
+        IEnumerable<RecipientTask> GetRecipientTasks(int recipientId);
         RecipientTask GetRecipientTask(int taskId);
         IEnumerable<SenderTask> GetSenderTasks(int senderId);
     }

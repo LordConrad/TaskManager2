@@ -113,6 +113,7 @@
     <Content Include="scripts\angular.min.js.map" />
     <Content Include="scripts\angular-route.min.js.map" />
     <Content Include="scripts\app\controllers\loginController.js" />
+    <Content Include="scripts\app\controllers\myProfileController.js" />
     <Content Include="scripts\app\controllers\recipientTaskController.js" />
     <Content Include="scripts\app\controllers\senderTasksController.js" />
     <Content Include="scripts\app\controllers\signUpController.js" />
@@ -121,6 +122,7 @@
     <Content Include="scripts\app\services\commentService.js" />
     <Content Include="scripts\app\services\taskService.js" />
     <Content Include="scripts\app\views\login.html" />
+    <Content Include="scripts\app\views\myProfile.html" />
     <Content Include="scripts\app\views\recipientTask.html" />
     <Content Include="scripts\app\views\senderTasks.html" />
     <Content Include="scripts\jquery-1.9.1.min.map" />

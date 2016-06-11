@@ -16,7 +16,7 @@
     app.config([
         '$routeProvider',
         '$httpProvider',
-        function($routeProvider, $httpProvider) {
+        function($routeProvider, $httpProvider, authService) {
             $routeProvider.
                 when('/login', {
                     templateUrl: 'scripts/app/views/login.html',
@@ -34,8 +34,12 @@
                     templateUrl: 'scripts/app/views/senderTasks.html',
                     controller: 'senderTasksController'
                 }).
+                when('/myProfile', {
+                    templateUrl: 'scripts/app/views/myProfile.html',
+                    controller: 'myProfileController'
+                }).
                 otherwise({
-                    redirectTo: '/recipientTasks'
+                    redirectTo: '/myProfile' 
                 });
             $httpProvider.interceptors.push('authInterceptorService');
         }

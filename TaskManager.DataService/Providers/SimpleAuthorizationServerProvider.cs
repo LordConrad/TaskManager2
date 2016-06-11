@@ -34,7 +34,7 @@ namespace TaskManager.DataService.Providers
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
-            var identity = new ClaimsIdentity(context.Options.AuthenticationType);
+            //var identity = new ClaimsIdentity(context.Options.AuthenticationType);
             using (var authRepository = new AuthRepository())
             {
                 ApplicationUser user = await authRepository.FindUser(context.UserName, context.Password);
@@ -46,26 +46,19 @@ namespace TaskManager.DataService.Providers
 
                 ClaimsIdentity oAuthIdentity = await authRepository.CreateIdentityAsync(user, context.Options.AuthenticationType);
                 List<Claim> roles = oAuthIdentity.Claims.Where(c => c.Type == ClaimTypes.Role).ToList();
-                AuthenticationProperties properties = CreateProperties(user.UserName, Newtonsoft.Json.JsonConvert.SerializeObject(roles.Select(x => x.Value)));
+                AuthenticationProperties properties = CreateProperties(user.UserName, user.Id, Newtonsoft.Json.JsonConvert.SerializeObject(roles.Select(x => x.Value)));
                 AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
-            //    context.Validated(ticket);
-
-                identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
-                foreach (Claim role in roles)
-                {
-                    identity.AddClaim(new Claim(ClaimTypes.Role, role.Value));
-                }
+                context.Validated(ticket);
             }
-
-            context.Validated(identity);
         }
 
-        public static AuthenticationProperties CreateProperties(string userName, string Roles)
+        public static AuthenticationProperties CreateProperties(string userName, int userId, string roles)
         {
             IDictionary<string, string> data = new Dictionary<string, string>
             {
+                {"userId", userId.ToString() },
                 {"userName", userName},
-                {"roles", Roles}
+                {"userRoles", roles}
             };
             return new AuthenticationProperties(data);
         }

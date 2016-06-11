@@ -51,11 +51,11 @@
                 });
             };
 
-            var getRecipientTasks = function ($defer, params, filter) {
+            var getRecipientTasks = function ($defer, params, filter, recipientId) {
                 $rootScope.loading = true;
                 $http({
                     method: 'GET',
-                    url: serviceHostUrl + '/api/recipientTasks'
+                    url: serviceHostUrl + '/api/recipientTasks/' + recipientId
 
                 }).success(function (data, status) {
 

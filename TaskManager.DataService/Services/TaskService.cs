@@ -9,7 +9,7 @@ namespace TaskManager.DataService.Services
 {
     public class TaskService : ITaskService
     {
-        public IEnumerable<RecipientTask> GetRecipientTasks()
+        public IEnumerable<RecipientTask> GetRecipientTasks(int recipientId)
         {
             using (var context = new TaskManagerContext())
             {
@@ -17,6 +17,7 @@ namespace TaskManager.DataService.Services
                     .Include(x => x.TaskSender)
                     .Include(x => x.TaskRecipient)
                     .Include(x => x.TaskPriority)
+                    .Where(x => x.RecipientId == recipientId)
                     .Select(RecipientTaskConverter.Convert).ToList();
             }
         }
