@@ -17,6 +17,8 @@ namespace TaskManager.DataService.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             return userIdentity;
         }
+
+        public string FullName { get; set; }
     }
 
     public class ApplicationUserLogin : IdentityUserLogin<Int32> { }

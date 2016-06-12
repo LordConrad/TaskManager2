@@ -11,7 +11,7 @@
         function ($scope, $routeParams, taskService, commentService, $location, authService) {
 
             $scope.backToList = function () {
-                $location.path('/myTasks');
+                $location.path('/recipientTasks/' + authService.authData.userId);
             };
 
             $scope.addButtonText = "Добавить";

@@ -9,11 +9,21 @@
                 password: ''
             };
 
-            $scope.login = function() {
-                authService.login($scope.loginData).then(function(response) {
+            $scope.message = '';
+            $scope.loading = false;
+
+            $scope.login = function () {
+                $scope.loading = true;
+                authService.login($scope.loginData).then(function (response) {
+                    $scope.loading = false;
                     $location.path('/recipientTasks');
-                }, function(err) {
-                    //$scope.message = err.error_description;
+                }, function (err) {
+                    $scope.loading = false;
+                    if (err == null) {
+                        $scope.message = 'Сервер недоступен';
+                    } else {
+                        $scope.message = err.error_description;
+                    }
                 });
             }
         }

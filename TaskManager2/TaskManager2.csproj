@@ -95,9 +95,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\44.gif" />
+    <Content Include="Content\images\back.jpg" />
+    <Content Include="Content\images\back_1.jpg" />
+    <Content Include="Content\images\title-logo.png" />
     <Content Include="Content\ng-table.css" />
     <Content Include="Content\site.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
+    <Content Include="favicon.ico" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -114,6 +118,7 @@
     <Content Include="scripts\angular-route.min.js.map" />
     <Content Include="scripts\app\controllers\loginController.js" />
     <Content Include="scripts\app\controllers\myProfileController.js" />
+    <Content Include="scripts\app\controllers\navbarController.js" />
     <Content Include="scripts\app\controllers\recipientTaskController.js" />
     <Content Include="scripts\app\controllers\senderTasksController.js" />
     <Content Include="scripts\app\controllers\signUpController.js" />

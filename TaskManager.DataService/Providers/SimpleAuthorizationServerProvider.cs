@@ -40,24 +40,25 @@ namespace TaskManager.DataService.Providers
                 ApplicationUser user = await authRepository.FindUser(context.UserName, context.Password);
                 if (user == null)
                 {
-                    context.SetError("invalid_grant", "The username or password is incorrect");
+                    context.SetError("invalid_grant", "Неверный логин или пароль");
                     return;
                 }
 
                 ClaimsIdentity oAuthIdentity = await authRepository.CreateIdentityAsync(user, context.Options.AuthenticationType);
                 List<Claim> roles = oAuthIdentity.Claims.Where(c => c.Type == ClaimTypes.Role).ToList();
-                AuthenticationProperties properties = CreateProperties(user.UserName, user.Id, Newtonsoft.Json.JsonConvert.SerializeObject(roles.Select(x => x.Value)));
+                AuthenticationProperties properties = CreateProperties(user.UserName, user.Id, user.FullName, Newtonsoft.Json.JsonConvert.SerializeObject(roles.Select(x => x.Value)));
                 AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
                 context.Validated(ticket);
             }
         }
 
-        public static AuthenticationProperties CreateProperties(string userName, int userId, string roles)
+        public static AuthenticationProperties CreateProperties(string login, int userId, string userName, string roles)
         {
             IDictionary<string, string> data = new Dictionary<string, string>
             {
                 {"userId", userId.ToString() },
-                {"userName", userName},
+                {"username", userName},
+                {"login", login},
                 {"userRoles", roles}
             };
             return new AuthenticationProperties(data);

@@ -2,7 +2,10 @@
 <html>
 <head>
     <title>Диспетчер заявок 2</title>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico" />
+
     <script src="scripts/jquery-1.9.1.min.js"></script>
     <script src="scripts/angular.js"></script>
     <script src="scripts/angular-route.js"></script>
@@ -23,7 +26,7 @@
     <script src="scripts/app/controllers/loginController.js"></script>
     <script src="scripts/app/controllers/signUpController.js"></script>
     <script src="scripts/app/controllers/myProfileController.js"></script>
-    
+    <script src="scripts/app/controllers/navbarController.js"></script>
 
     <link rel="stylesheet" href="Content/bootstrap.css" />
     <link rel="stylesheet" href="Content/bootstrap-theme.css" />
@@ -43,7 +46,7 @@
             </div>
         </div>-->
     </div>
-    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation" ng-controller="navbarController">
         <div class="container">
             <div class="navbar-header">
 
@@ -57,7 +60,7 @@
             </div>
             <div class="navbar-collapse collapse" ng-class="!navCollapsed && 'in'">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="">Входящие заявки</a></li>
+                    <li class="active"><a href="/#/recipientTasks">Входящие заявки</a></li>
                     <li><a href="">Исходящие заявки</a></li>
                     <!--<li><a href="">Link</a></li>
                     <li class="dropdown">
@@ -74,16 +77,17 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li class="divider-vertical"></li>
-                    <li class="dropdown">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown">&lsaquo;User&rsaquo; <b class="caret"></b></a>
+                    <li class="dropdown" ng-if="isAuth()">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">{{fullName()}} <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <!--<li><a href="">Action</a></li>
-                            <li><a href="">Another action</a></li>
+                            <li><a href="">Профиль</a></li>
+                            <!--<li><a href="">Another action</a></li>
                             <li><a href="">Something else here</a></li>-->
                             <li class="divider"></li>
-                            <li><a href="">Выход</a></li>
+                            <li><a href="" ng-click="logOut();">Выход</a></li>
                         </ul>
                     </li>
+                    <li ng-if="!isAuth()"><a href="">Вход</a></li>
                 </ul>
             </div><!-- /.nav-collapse -->
         </div>

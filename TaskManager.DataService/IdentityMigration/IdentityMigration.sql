@@ -1,10 +1,11 @@
 SET IDENTITY_INSERT [TaskManagerDb].[dbo].[AspNetUsers] ON
 
   INSERT INTO [TaskManagerDb].[dbo].[AspNetUsers]
-  (Id, UserName, PasswordHash, SecurityStamp, EmailConfirmed, PhoneNumberConfirmed, TwoFactorEnabled, LockoutEnabled, AccessFailedCount)
+  (Id, UserName, FullName, PasswordHash, SecurityStamp, EmailConfirmed, PhoneNumberConfirmed, TwoFactorEnabled, LockoutEnabled, AccessFailedCount)
   SELECT
 	mshp.UserId,
 	usr.UserName,
+	usr.UserFullName,
 	mshp.[Password],
 	NEWID(),
 	0, 0, 0, 0, 0
