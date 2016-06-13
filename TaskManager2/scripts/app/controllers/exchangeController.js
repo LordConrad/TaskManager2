@@ -3,8 +3,8 @@
         '$scope',
         'exchangeService',
         function($scope, exchangeService) {
-            exchangeService.getCurrenciesInfo().then(function(response) {
-                var res = response;
+            exchangeService.getCurrencyRates('13.06.2016').then(function(response) {
+                $scope.data = response.data;
             });
         }
     ]);

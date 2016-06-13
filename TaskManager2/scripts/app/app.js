@@ -7,8 +7,7 @@
             'app.services',
             'ngTable',
             'ngResource',
-            'LocalStorageModule',
-            'angularSoap'
+            'LocalStorageModule'
         ]);
 
     angular.module('app.controllers', []);

@@ -1,15 +1,27 @@
 ﻿(function() {
     angular.module('app.services').factory('exchangeService', [
-        '$soap',
-            function($soap) {
-                var exchangeServiceUrl = 'http://www.nbrb.by/Services/ExRates.asmx';
+        '$http',
+        '$rootScope',
+            function($http, $rootScope) {
+                var serviceHostUrl = 'http://localhost:1135';
 
-                var getCurrenciesInfo = function() {
-                    $soap.post(exchangeServiceUrl, 'ExRatesDaily2', { onDate: '2016-06-13' });
+                var getCurrencyRates = function (date) {
+                    $rootScope.loading = true;
+                    return $http({
+                        method: 'POST',
+                        url: serviceHostUrl + '/api/getExchangeRates',
+                        data: JSON.stringify({ date: date })
+                    }).success(function(response, status) {
+                        return response;
+                    }).error(function(err, status) {
+                        alert('error getting currencies');
+                    }).finally(function() {
+                        $rootScope.loading = false;
+                    });
                 };
 
                 return {
-                    getCurrenciesInfo: getCurrenciesInfo
+                    getCurrencyRates: getCurrencyRates
                 };
             }
         ]);

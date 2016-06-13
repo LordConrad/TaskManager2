@@ -168,6 +168,14 @@ table.center-cells {
 
 .login-view:before {
     background: url(images/back_1.jpg) no-repeat center center fixed;
+    margin-top: -50px;
+}
+
+.exchange-view:before {
+    background: url(images/currencies_back.jpg) no-repeat center center fixed;
+}
+
+.blur-background:before {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -185,11 +193,13 @@ table.center-cells {
     content: "";
 }
 
-.login-view {
+.blur-background {
     z-index: 0;
     position: fixed;
     display: block;
     height: 100%;
     width: 100%;
-    margin-top: -50px;
+    
 }
+
+
