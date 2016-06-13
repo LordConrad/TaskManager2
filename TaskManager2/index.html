@@ -14,6 +14,8 @@
     <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
     <script src="scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="scripts/angular.soap.js"></script>
+    <script src="scripts/soapclient.js"></script>
 
     <script src="scripts/app/app.js"></script>
     <script src="scripts/ng-table.js"></script>
@@ -21,12 +23,14 @@
     <script src="scripts/app/services/commentService.js"></script>
     <script src="scripts/app/services/authService.js"></script>
     <script src="scripts/app/services/authInterceptorService.js"></script>
+    <script src="scripts/app/services/exchangeService.js"></script>
     <script src="scripts/app/controllers/recipientTasksController.js"></script>
     <script src="scripts/app/controllers/recipientTaskController.js"></script>
     <script src="scripts/app/controllers/loginController.js"></script>
     <script src="scripts/app/controllers/signUpController.js"></script>
     <script src="scripts/app/controllers/myProfileController.js"></script>
     <script src="scripts/app/controllers/navbarController.js"></script>
+    <script src="scripts/app/controllers/exchangeController.js"></script>
 
     <link rel="stylesheet" href="Content/bootstrap.css" />
     <link rel="stylesheet" href="Content/bootstrap-theme.css" />
@@ -62,8 +66,8 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/#/recipientTasks">Входящие заявки</a></li>
                     <li><a href="">Исходящие заявки</a></li>
-                    <!--<li><a href="">Link</a></li>
-                    <li class="dropdown">
+                    <li><a href="">Курсы валют</a></li>
+                    <!--<li class="dropdown">
                         <a href="" data-toggle="dropdown" class="dropdown-toggle">Dropdown <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="">Action</a></li>

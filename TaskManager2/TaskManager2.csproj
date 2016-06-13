@@ -116,6 +116,8 @@
     <Content Include="scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="scripts\angular.min.js.map" />
     <Content Include="scripts\angular-route.min.js.map" />
+    <Content Include="scripts\angular.soap.js" />
+    <Content Include="scripts\app\controllers\exchangeController.js" />
     <Content Include="scripts\app\controllers\loginController.js" />
     <Content Include="scripts\app\controllers\myProfileController.js" />
     <Content Include="scripts\app\controllers\navbarController.js" />
@@ -125,7 +127,9 @@
     <Content Include="scripts\app\services\authInterceptorService.js" />
     <Content Include="scripts\app\services\authService.js" />
     <Content Include="scripts\app\services\commentService.js" />
+    <Content Include="scripts\app\services\exchangeService.js" />
     <Content Include="scripts\app\services\taskService.js" />
+    <Content Include="scripts\app\views\exchange.html" />
     <Content Include="scripts\app\views\login.html" />
     <Content Include="scripts\app\views\myProfile.html" />
     <Content Include="scripts\app\views\recipientTask.html" />
@@ -190,6 +194,7 @@
     <Content Include="scripts\jquery-1.9.1.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
     <Content Include="scripts\ng-table.js" />
+    <Content Include="scripts\soapclient.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

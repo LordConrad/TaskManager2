@@ -7,7 +7,8 @@
             'app.services',
             'ngTable',
             'ngResource',
-            'LocalStorageModule'
+            'LocalStorageModule',
+            'angularSoap'
         ]);
 
     angular.module('app.controllers', []);
@@ -37,6 +38,10 @@
                 when('/myProfile', {
                     templateUrl: 'scripts/app/views/myProfile.html',
                     controller: 'myProfileController'
+                }).
+                when('/exchange', {
+                    templateUrl: 'scripts/app/views/exchange.html',
+                    controller: 'exchangeController'
                 }).
                 otherwise({
                     redirectTo: '/myProfile' 
