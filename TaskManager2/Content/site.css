@@ -132,14 +132,17 @@ table.center-cells {
 }
 
 .login-box {
-    width: 600px;
+    width: 615px;
     position: fixed;
     top: 150px;
     left: 0;
     right: 0;
     margin: auto;
-    height: 450px;
+    height: 500px;
     text-align: center;
+    padding-top: 15px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 30px;
 }
 
 .login-form {
