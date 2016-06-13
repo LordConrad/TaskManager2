@@ -39,14 +39,14 @@
     <div class="center-spinner" ng-model="$rootScope" ng-show="loading">
         <div class="gif-spinner"></div>
         <!--<div class="outerBox">
-            <div class="overlay"></div>
-            <div class="spinner">
-                <div class="double-bounce1"></div>
-                <div class="double-bounce2"></div>
-            </div>
-        </div>-->
+                <div class="overlay"></div>
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>-->
     </div>
-    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation" ng-controller="navbarController">
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation" ng-controller="navbarController" ng-show="isAuth()">
         <div class="container">
             <div class="navbar-header">
 
