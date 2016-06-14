@@ -2,9 +2,14 @@
     angular.module('app.controllers').controller('navbarController', [
         '$scope',
         'authService',
-        function ($scope, authService) {
+        '$location',
+        function ($scope, authService, $location) {
             $scope.isAuth = function() {
                 return authService.authData.isAuth;
+            };
+
+            $scope.isActive = function (viewLocation) {
+                return viewLocation === $location.path();
             };
 
             $scope.userId = function() {

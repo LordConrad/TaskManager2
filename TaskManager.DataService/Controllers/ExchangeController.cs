@@ -25,10 +25,10 @@ namespace TaskManager.DataService.Controllers
         [Route("api/GetExchangeRates")]
         public IEnumerable<ExchangeRate> GetExchangeRates([FromBody]ExchangeRateParameterViewModel model)
         {
-            DateTime dateTime;
-            if (DateTime.TryParse(model.Date, out dateTime))
+            DateTime date;
+            if (DateTime.TryParse(model.Date, out date))
             {
-                return _exchangeService.GetExchangeRatesByDate(DateTime.Now);
+                return _exchangeService.GetExchangeRatesByDate(date);
             }
             return null;
         }

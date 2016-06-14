@@ -3,8 +3,8 @@
     src: url(../fonts/Exo2/Exo2-Medium.ttf);
 }
 
-body {
-    /*font-family: 'Exo 2';*/
+.exo2-font {
+    font-family: 'Exo 2';
 }
 
 .padding-top-20 {
@@ -132,7 +132,7 @@ table.center-cells {
 }
 
 .login-box {
-    width: 615px;
+    width: 500px;
     position: fixed;
     top: 150px;
     left: 0;
@@ -157,8 +157,9 @@ table.center-cells {
 
 .title-logo {
     background: url(../Content/images/title-logo.png) 50% 50% no-repeat;
-    width: 600px;
-    height: 250px;
+    width: 476px;
+    height: 233px;
+    margin: auto;
 }
 
 .alert {
@@ -195,7 +196,6 @@ table.center-cells {
 
 .blur-background {
     z-index: 0;
-    position: fixed;
     display: block;
     height: 100%;
     width: 100%;
@@ -206,4 +206,32 @@ table.center-cells {
     padding: 45px;
     margin: 65px;
     border-radius: 20px;
+    text-align: center;
+}
+
+@media(max-width: 1200px) {
+    .exchange-box {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media(max-width: 990px) {
+    .exchange-datepicker-block {
+        width: 100%;
+        text-align: center;
+    }
+    .exchange-datepicker {
+        display: inline-block;
+        margin-top: 25px;
+    }
+}
+
+.exchange-table {
+    text-align: left;
+    font-size: 14pt;
+}
+
+.exchange-table > tbody > tr > td {
+    padding: 10px;
 }

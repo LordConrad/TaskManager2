@@ -98,6 +98,9 @@
     <Content Include="Content\images\back.jpg" />
     <Content Include="Content\images\back_1.jpg" />
     <Content Include="Content\images\currencies_back.jpg" />
+    <Content Include="Content\images\flags\EUR.png" />
+    <Content Include="Content\images\flags\RUB.png" />
+    <Content Include="Content\images\flags\USD.png" />
     <Content Include="Content\images\title-logo.png" />
     <Content Include="Content\ng-table.css" />
     <Content Include="Content\site.css" />
@@ -109,6 +112,7 @@
     </Content>
     <Content Include="scripts\angular-local-storage.js" />
     <Content Include="scripts\angular-local-storage.min.js" />
+    <Content Include="scripts\angular-locale_ru-ru.js" />
     <Content Include="scripts\angular-resource.js" />
     <Content Include="scripts\angular-resource.min.js" />
     <Content Include="scripts\angular-ui\ui-bootstrap-tpls.js" />
