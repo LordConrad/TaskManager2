@@ -1,20 +1,22 @@
 ﻿<div class="blur-background exchange-view">
     <div class="container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Валюта</th>
-                    <th>Код</th>
-                    <th>Стоимость</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="cur in data">
-                    <td>{{cur.currencyName}}</td>
-                    <td>{{cur.currencyAbbreviation}}</td>
-                    <td>{{cur.rate}}</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="exchange-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Валюта</th>
+                        <th>Код</th>
+                        <th>Стоимость</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="cur in data">
+                        <td>{{cur.currencyName}}</td>
+                        <td>{{cur.currencyAbbreviation}}</td>
+                        <td>{{cur.rate}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
