@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using TaskManager.DataService.Converters;
@@ -51,6 +52,21 @@ namespace TaskManager.DataService.Services
                     .Select(SenderTaskConverter.Convert);
 
             }
+        }
+
+        public bool CompleteTask(int id)
+        {
+            using (var context = new TaskManagerContext())
+            {
+                var task = context.Tasks.FirstOrDefault(x => x.TaskId == id);
+                if (task != null)
+                {
+                    task.CompleteDate = DateTime.Now;
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

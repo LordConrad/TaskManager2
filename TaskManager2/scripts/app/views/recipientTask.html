@@ -8,16 +8,20 @@
         </div>
         <div class="panel panel-primary margin-top-20">
             <div class="panel-heading">Заявка #{{task.id}}</div>
-            <div class="panel-body">{{task.text}}</div>
+            <div class="panel-body">
+                <img ng-show="task.acceptCompleteDateTime" class="task-complete-image" src="../../../Content/images/sender-ok.png" alt="Подтверждена"/>
+                <img ng-show="task.completeDateTime && !task.acceptCompleteDateTime" class="task-complete-image" src="../../../Content/images/recipient-ok.png" alt="Выполнена" />
+                {{task.text}}
+            </div>
         </div>
         <div class="row">
             <div class="col-md-4 col-sm-4">
                 <b>Статус: </b>
-                <span ng-style="getStatusLabelStyle(task.completeDateTime, task.acceptCompleteDateTime)"><b>{{task.acceptCompleteDateTime ? 'Подтверждена ' + (task.acceptCompleteDateTime | date: 'dd.MM.yyyy HH:mm') : (task.CompleteDateTime ? 'Выполнена ' + (task.completeDatetime | date: 'dd.MM.yyyy HH:mm') : 'Не выполнена')}}</b></span>
+                <span ng-style="getStatusLabelStyle(task.completeDateTime, task.acceptCompleteDateTime)"><b>{{task.acceptCompleteDateTime ? 'Подтверждена ' + (task.acceptCompleteDateTime | date: 'dd.MM.yyyy HH:mm') : (task.completeDateTime ? 'Выполнена ' + (task.completeDateTime | date: 'dd.MM.yyyy HH:mm') : 'Не выполнена')}}</b></span>
             </div>
             <div class="col-md-4 col-sm-4 text-center left-if-small"><b>Приоритет: </b>{{task.priorityName}}</div>
             <div class="col-md-4 col-sm-4 text-right">
-                <button class="btn btn-primary widht-120 "><span class="glyphicon glyphicon-ok"></span> &nbsp;Выполнено</button>
+                <button ng-click="completeTask()" ng-hide="task.completeDateTime" class="btn btn-primary widht-120 "><span class="glyphicon glyphicon-ok"></span> &nbsp;Выполнено</button>
             </div>
         </div>
         <div class="comments-block form-group margin-top-20">

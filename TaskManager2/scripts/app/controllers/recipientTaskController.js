@@ -17,6 +17,14 @@
             $scope.addButtonText = "Добавить";
             $scope.addingComment = false;
 
+            $scope.completeTask = function() {
+                taskService.completeTask($routeParams.taskId).then(function(response) {
+                    if (response.status === 200) {
+                        refreshTask();
+                    };
+                });
+            };
+
             $scope.addComment = function () {
                 $scope.addingComment = true;
                 $scope.addButtonText = "Добавление...";
@@ -43,15 +51,11 @@
             }
 
 
-            $scope.getStatusLabelStyle = function (complete, accept) {
-                if (accept) {
+            $scope.getStatusLabelStyle = function(complete, accept) {
+                if (accept || complete) {
                     return { 'color': 'green' };
                 } else {
-                    if (complete) {
-                        return { 'color': 'yellow' };
-                    } else {
-                        return { 'color': 'red' };
-                    }
+                    return { 'color': 'red' };
                 }
             };
 

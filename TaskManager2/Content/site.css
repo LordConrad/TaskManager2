@@ -235,3 +235,9 @@ table.center-cells {
 .exchange-table > tbody > tr > td {
     padding: 10px;
 }
+
+.task-complete-image {
+    height: 30px;
+    float: left;
+    margin-right: 10px;
+}

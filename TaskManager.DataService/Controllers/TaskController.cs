@@ -41,5 +41,17 @@ namespace TaskManager.DataService.Controllers
             return _taskService.GetSenderTasks(senderId);
         }
 
+        [HttpGet]
+        [Authorize(Roles = "Recipient")]
+        [Route("api/completeTask/{id:int}")]
+        public IHttpActionResult CompleteTask(int id)
+        {
+            if (_taskService.CompleteTask(id))
+            {
+                return Ok();
+            }
+            return InternalServerError();
+        }
+
     }
 }

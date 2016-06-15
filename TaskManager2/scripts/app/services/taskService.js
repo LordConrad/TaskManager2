@@ -71,6 +71,20 @@
                 });
             };
 
+            var completeTask = function (taskId) {
+                $rootScope.loading = true;
+                return $http({
+                    method: 'GET',
+                    url: serviceHostUrl + '/api/completeTask/' + taskId
+                }).success(function(data, status) {
+                    return data;
+                }).error(function(error, status) {
+                    return error;
+                }).finally(function() {
+                    $rootScope.loading = false;
+                });
+            }
+
             var getSenderTasks = function ($defer, params, filter, senderId) {
                 $http({
                     method: 'GET',
@@ -80,7 +94,8 @@
 
             return {
                 getRecipientTasks: getRecipientTasks,
-                getRecipientTask: getRecipientTask
+                getRecipientTask: getRecipientTask,
+                completeTask: completeTask
             };
         }
     ]);

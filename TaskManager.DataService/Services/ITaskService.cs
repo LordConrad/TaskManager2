@@ -8,5 +8,6 @@ namespace TaskManager.DataService.Services
         IEnumerable<RecipientTask> GetRecipientTasks(int recipientId);
         RecipientTask GetRecipientTask(int taskId);
         IEnumerable<SenderTask> GetSenderTasks(int senderId);
+        bool CompleteTask(int id);
     }
 }
