@@ -1,0 +1,15 @@
+﻿<div class="blur-background login-view">
+    <div class="container">
+        <div class="login-box">
+            <div class="title-logo"></div>
+            <div class="login-form">
+                <form ng-submit="login();" class="form-group">
+                    <input class="form-control margin-top-25" ng-model="loginData.username" placeholder="Логин" />
+                    <input class="form-control margin-top-15" type="password" ng-model="loginData.password" placeholder="Пароль" />
+                    <button type="submit" ng-disabled="loading" class="btn btn-primary login-button">Вход</button>
+                    <div ng-hide="message=='' || loading" class="alert alert-danger">{{message}}</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

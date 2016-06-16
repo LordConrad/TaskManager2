@@ -1,0 +1,24 @@
+﻿<div class="blur-background exchange-view">
+    <div class="container">
+        <div class="exchange-box">
+            <h2 class="exo2-font">Курсы валют на {{dt | date: 'dd.MM.yyyy'}}</h2>
+            <div class="row margin-top-25">
+                <div class="col-md-8 exo2-font">
+                    <table class="exchange-table">
+                        <tbody>
+                            <tr ng-repeat="cur in currencies | filter: currencyFilter">
+                                <td><img width="80" ng-src="/Content/images/flags/{{cur.currencyAbbreviation}}.png" /></td>
+                                <td>{{cur.currencyName}}</td>
+                                <td><b>{{cur.currencyAbbreviation}}</b></td>
+                                <td><b>{{cur.rate}}</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-4 exchange-datepicker-block">
+                    <uib-datepicker ng-model="dt" class="exchange-datepicker" datepicker-options="options"></uib-datepicker>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

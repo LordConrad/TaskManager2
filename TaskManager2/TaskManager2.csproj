@@ -162,6 +162,7 @@
     <Content Include="fonts\Exo2\Exo2-Thin.ttf" />
     <Content Include="fonts\Exo2\Exo2-ThinItalic.ttf" />
     <Content Include="scripts\angular-local-storage.min.js.map" />
+    <None Include="Properties\PublishProfiles\taskManagerWeb.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
