@@ -11,12 +11,12 @@ namespace TaskManager.DataService.Services
 {
     public class ExchangeService : IExchangeService
     {
-        readonly string _url = "http://www.nbrb.by/Services/ExRates.asmx";
+        private const string Url = "http://www.nbrb.by/Services/ExRates.asmx";
 
         public IEnumerable<ExchangeRate> GetExchangeRatesByDate(DateTime date)
         {
             XmlDocument soapEnvelopeXml = CreateSoapEnvelope(date);
-            HttpWebRequest webRequest = CreateWebRequest(_url);
+            HttpWebRequest webRequest = CreateWebRequest(Url);
             InsertSoapEnvelopeIntoWebRequest(soapEnvelopeXml, webRequest);
 
             // begin async call to web request.
@@ -51,14 +51,14 @@ namespace TaskManager.DataService.Services
         private static XmlDocument CreateSoapEnvelope(DateTime date)
         {
             XmlDocument soapEnvelop = new XmlDocument();
-            soapEnvelop.LoadXml(
-                $@"<soap12:Envelope xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns:soap12=""http://www.w3.org/2003/05/soap-envelope"">
+            soapEnvelop.LoadXml(string.Format(
+                @"<soap12:Envelope xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns:soap12=""http://www.w3.org/2003/05/soap-envelope"">
                 <soap12:Body>
                     <ExRatesDaily2 xmlns=""http://www.nbrb.by/"">
-                        <onDate>{date.ToString("yyyy-MM-dd")}</onDate>
+                        <onDate>{0}</onDate>
                     </ExRatesDaily2>
                 </soap12:Body>
-                </soap12:Envelope>");
+                </soap12:Envelope>", date.ToString("yyyy-MM-dd")));
             return soapEnvelop;
         }
 

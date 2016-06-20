@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Web.Http;
 using TaskManager.DataService.Models;
 using TaskManager.DataService.Services;
@@ -23,14 +24,19 @@ namespace TaskManager.DataService.Controllers
 
         [HttpPost]
         [Route("api/GetExchangeRates")]
-        public IEnumerable<ExchangeRate> GetExchangeRates([FromBody]ExchangeRateParameterViewModel model)
+        public IHttpActionResult GetExchangeRates([FromBody]ExchangeRateParameterViewModel model)
         {
             DateTime date;
             if (DateTime.TryParse(model.Date, out date))
             {
-                return _exchangeService.GetExchangeRatesByDate(date);
+                var result = _exchangeService.GetExchangeRatesByDate(date);
+                if (result == null)
+                {
+                    return InternalServerError(new ExternalException("nbrb.by server returns error"));
+                }
+                return Ok(result);
             }
-            return null;
+            return InternalServerError(new ArgumentException("Can't parse date"));
         }
     }
 }

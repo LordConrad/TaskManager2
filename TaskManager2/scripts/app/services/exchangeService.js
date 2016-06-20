@@ -14,7 +14,7 @@
                     }).success(function(response, status) {
                         return response;
                     }).error(function(err, status) {
-                        alert('error getting currencies');
+                        return err;
                     }).finally(function() {
                         $rootScope.loading = false;
                     });
