@@ -3,10 +3,8 @@
         '$http',
         '$filter',
         '$rootScope',
-        function ($http, $filter, $rootScope) {
-
-            var serviceHostUrl = 'http://localhost:1135';
-            //var serviceHostUrl = 'http://10.10.4.110/TaskManager2.DataAccess';
+        'apiRoot',
+        function ($http, $filter, $rootScope, apiRoot) {
 
             function filterData(data, filter) {
                 var res = $filter('filter')(data, filter);
@@ -41,7 +39,7 @@
                 $rootScope.loading = true;
                 return $http({
                     method: 'GET',
-                    url: serviceHostUrl + '/api/recipientTask/' + taskId
+                    url: apiRoot + '/recipientTask/' + taskId
                 }).success(function(data, status) {
                     return data;
                 }).error(function(data, status) {
@@ -55,7 +53,7 @@
                 $rootScope.loading = true;
                 $http({
                     method: 'GET',
-                    url: serviceHostUrl + '/api/recipientTasks/' + recipientId
+                    url: apiRoot + '/recipientTasks/' + recipientId
 
                 }).success(function (data, status) {
 
@@ -75,7 +73,7 @@
                 $rootScope.loading = true;
                 return $http({
                     method: 'GET',
-                    url: serviceHostUrl + '/api/completeTask/' + taskId
+                    url: apiRoot + '/completeTask/' + taskId
                 }).success(function(data, status) {
                     return data;
                 }).error(function(error, status) {
@@ -88,7 +86,7 @@
             var getSenderTasks = function ($defer, params, filter, senderId) {
                 $http({
                     method: 'GET',
-                    url: serviceHostUrl + '/api/senderTask'
+                    url: apiRoot + '/senderTask'
                 });
             };
 

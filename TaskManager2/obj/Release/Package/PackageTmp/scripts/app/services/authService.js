@@ -5,8 +5,8 @@
         'localStorageService',
         '$location',
         '$rootScope',
-        function($http, $q, localStorageService, $location, $rootScope) {
-            var serviceHostUrl = 'http://localhost:1135';
+        'apiRoot',
+        function($http, $q, localStorageService, $location, $rootScope, apiRoot) {
             var authServiceFactory = {};
             var authentication = {
                 isAuth: false,
@@ -53,7 +53,7 @@
             var login = function(loginData) {
                 var data = "grant_type=password&username=" + loginData.username + '&password=' + loginData.password;
                 var deffered = $q.defer();
-                $http.post(serviceHostUrl + '/token', data, {
+                $http.post(apiRoot + '/token', data, {
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }

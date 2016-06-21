@@ -29,7 +29,7 @@ namespace TaskManager.DataService.App_Start
             OAuthAuthorizationServerOptions oAuthAuthorizationServerOptions = new OAuthAuthorizationServerOptions
             {
                 AllowInsecureHttp = true,
-                TokenEndpointPath = new PathString("/token"),
+                TokenEndpointPath = new PathString("/api/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(10000),
                 Provider = new SimpleAuthorizationServerProvider()
             };

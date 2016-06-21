@@ -4,7 +4,10 @@
     <title>Диспетчер заявок 2</title>
     <meta charset="utf-8"/>
     <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
-    <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico" />
+    <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico"/>
+    <link id="apiRoot" href="http://localhost:1135/taskmanager.dataservice/api"/>
+    <!--<link id="apiRoot" href="http://taskserver/taskmanager.dataservice/api" />-->
+    <link id="viewsRoot" href="/taskmanager2"/>
 
     <script src="scripts/jquery-1.9.1.min.js"></script>
     <script src="scripts/angular.js"></script>
@@ -67,9 +70,9 @@
             </div>
             <div class="navbar-collapse collapse" ng-class="!navCollapsed && 'in'">
                 <ul class="nav navbar-nav">
-                    <li ng-class="{active: isActive('/recipientTasks')}"><a href="/#/recipientTasks">Входящие заявки</a></li>
+                    <li ng-class="{active: isActive('/recipientTasks')}"><a ng-href="{{recipientTasksUrl}}">Входящие заявки</a></li>
                     <li ><a href="">Исходящие заявки</a></li>
-                    <li ng-class="{active: isActive('/exchange')}"><a href="/#/exchange">Курсы валют</a></li>
+                    <li ng-class="{active: isActive('/exchange')}"><a ng-href="{{exchangeUrl}}">Курсы валют</a></li>
                     <!--<li class="dropdown">
                         <a href="" data-toggle="dropdown" class="dropdown-toggle">Dropdown <b class="caret"></b></a>
                         <ul class="dropdown-menu">

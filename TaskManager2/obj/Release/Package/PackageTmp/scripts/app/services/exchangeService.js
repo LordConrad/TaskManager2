@@ -2,14 +2,14 @@
     angular.module('app.services').factory('exchangeService', [
         '$http',
         '$rootScope',
-            function($http, $rootScope) {
-                var serviceHostUrl = 'http://localhost:1135';
+        'apiRoot',
+            function($http, $rootScope, apiRoot) {
 
                 var getCurrencyRates = function (date) {
                     $rootScope.loading = true;
                     return $http({
                         method: 'POST',
-                        url: serviceHostUrl + '/api/getExchangeRates',
+                        url: apiRoot + '/getExchangeRates',
                         data: JSON.stringify({ date: date })
                     }).success(function(response, status) {
                         return response;

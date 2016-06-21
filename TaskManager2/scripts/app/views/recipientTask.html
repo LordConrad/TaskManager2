@@ -1,5 +1,5 @@
 ﻿<div class="container padding-top-20">
-    
+
     <div ng-show="task">
         <div class="row">
             <div class="col-md-4 col-sm-4"><b>Отправил: </b>{{task.senderName}}</div>
@@ -9,9 +9,9 @@
         <div class="panel panel-primary margin-top-20">
             <div class="panel-heading">Заявка #{{task.id}}</div>
             <div class="panel-body">
-                <img ng-show="task.acceptCompleteDateTime" class="task-complete-image" src="../../../Content/images/sender-ok.png" alt="Подтверждена"/>
-                <img ng-show="task.completeDateTime && !task.acceptCompleteDateTime" class="task-complete-image" src="../../../Content/images/recipient-ok.png" alt="Выполнена" />
-                {{task.text}}
+                <div ng-show="task.acceptCompleteDateTime" class="task-status-image accepted-image"></div>
+                <div ng-show="task.completeDateTime && !task.acceptCompleteDateTime" class="task-status-image complete-image"></div>
+                <div class="task-text">{{task.text}}</div>
             </div>
         </div>
         <div class="row">

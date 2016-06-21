@@ -10,8 +10,16 @@
             'LocalStorageModule'
         ]);
 
-    angular.module('app.controllers', []);
-    angular.module('app.services', []);
+    angular.module('app.controllers', [])
+        .config(['$provide', function($provide) {
+                $provide.value('viewsRoot', $('#viewsRoot').attr('href'));
+            }
+        ]);
+    angular.module('app.services', [])
+        .config(['$provide', function($provide) {
+                $provide.value('apiRoot', $('#apiRoot').attr('href'));
+            }
+        ]);
 
     app.config([
         '$routeProvider',

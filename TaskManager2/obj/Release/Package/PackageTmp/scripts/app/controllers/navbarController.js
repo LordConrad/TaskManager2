@@ -3,7 +3,8 @@
         '$scope',
         'authService',
         '$location',
-        function ($scope, authService, $location) {
+        'viewsRoot',
+        function ($scope, authService, $location, viewsRoot) {
             $scope.isAuth = function() {
                 return authService.authData.isAuth;
             };
@@ -23,6 +24,9 @@
             $scope.logOut = function() {
                 authService.logOut();
             };
+
+            $scope.recipientTasksUrl = viewsRoot + '/#/recipientTasks';
+            $scope.exchangeUrl = viewsRoot + '/#/exchange';
         }
     ]);
 })();

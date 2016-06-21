@@ -2,13 +2,13 @@
     angular.module('app.services').factory('commentService', [
         '$http',
         '$rootScope',
-        function($http, $rootScope) {
-            var serviceHostUrl = 'http://localhost:1135';
+        'apiRoot',
+        function($http, $rootScope, apiRoot) {
 
             var getTaskComments = function (taskId) {
                 return $http({
                     method: 'GET',
-                    url: serviceHostUrl + '/api/comment/' + taskId
+                    url: apiRoot + '/comment/' + taskId
                 }).success(function(data, status) {
                     return data;
                 }).error(function(error) {
@@ -20,7 +20,7 @@
             var addNewComment = function(taskId, authorId, text ) {
                 return $http({
                         method: 'POST',
-                        url: serviceHostUrl + '/api/comment',
+                        url: apiRoot + '/comment',
                         data: angular.toJson(
                         {
                             TaskId: taskId,
