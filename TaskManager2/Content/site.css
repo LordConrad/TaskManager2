@@ -247,19 +247,18 @@ table.center-cells {
 }
 
 .task-status-image {
-    height: 30px;
-    width: 30px;
-    float: left;
-    margin-right: 10px;
+    width: 35px;
+    display: table-cell;
+    height: 35px;
 }
 
 .accepted-image {
-    background: url(../Content/images/sender-ok.png);
+    background: url(../Content/images/sender-ok.png) no-repeat center center;
     background-size: contain;
 }
 
 .complete-image {
-    background: url(../Content/images/recipient-ok.png);
+    background: url(../Content/images/recipient-ok.png) no-repeat center center;
     background-size: contain;
 }
 
@@ -268,4 +267,11 @@ table.center-cells {
 }
 
 .task-text {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.task-box {
+    border-spacing: 15px 0;
+    margin: 0 -15px;
 }

@@ -8,7 +8,7 @@
         </div>
         <div class="panel panel-primary margin-top-20">
             <div class="panel-heading">Заявка #{{task.id}}</div>
-            <div class="panel-body">
+            <div class="panel-body task-box">
                 <div ng-show="task.acceptCompleteDateTime" class="task-status-image accepted-image"></div>
                 <div ng-show="task.completeDateTime && !task.acceptCompleteDateTime" class="task-status-image complete-image"></div>
                 <div class="task-text">{{task.text}}</div>
