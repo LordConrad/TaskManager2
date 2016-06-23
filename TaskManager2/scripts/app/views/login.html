@@ -1,23 +1,33 @@
 ﻿<div class="blur-background login-view">
     <div class="container">
-        <div class="flip-container login-box">
-            <div class="front">
+        <flipper horizontal flipped="flipped">
+            <front>
                 <div class="title-logo"></div>
-                <div class="login-form">
-                    <form ng-submit="login();" class="form-group">
+                    <form ng-submit="login();" class="form-group login-form">
                         <input class="form-control margin-top-25" ng-model="loginData.username" placeholder="Логин" />
                         <input class="form-control margin-top-15" type="password" ng-model="loginData.password" placeholder="Пароль" />
                         <div>
                             <button type="submit" ng-disabled="loading" class="btn btn-primary login-form-button">Вход</button>
-                            <button class="btn btn-info login-form-button">Регистрация</button>
+                            <button type="button" ng-click="flip()" class="btn btn-primary login-form-button">Регистрация</button>
                         </div>
                         <div ng-hide="message=='' || loading" class="alert alert-danger">{{message}}</div>
                     </form>
-                </div>
-            </div>
-            <div class="back">
-                    
-            </div>
-        </div>
+            </front>
+            <back>
+                <div class="title-logo"></div>
+                <form ng-submit="signUp();" class="form-group login-form" ng-controller="signUpController">
+                    <input class="form-control margin-top-25" ng-model="registration.username" placeholder="Логин"/>
+                    <div>
+                        <input class="form-control margin-top-15 register-pass" type="password" ng-model="registration.password" placeholder="Пароль" />
+                        <input class="form-control margin-top-15 register-pass" type="password" ng-model="registration.confirmPassword" placeholder="Пароль еще раз" />
+                    </div>
+                    <div>
+                        <button type="submit" ng-disabled="loading" class="btn btn-primary login-form-button">Создать</button>
+                        <button type="button" ng-click="flip()" class="btn btn-primary login-form-button">Отмена</button>
+                    </div>
+                    <div ng-hide="message=='' || loading" class="alert alert-danger">{{message}}</div>
+                </form>
+            </back>
+        </flipper>
     </div>
 </div>

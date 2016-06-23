@@ -142,17 +142,7 @@ table.center-cells {
 }
 
 .login-box {
-    width: 500px;
-    top: 100px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    margin-bottom: 100px;
-    height: 500px;
-    text-align: center;
-    padding-top: 15px;
-    background: rgba(255,255,255,0.4);
-    border-radius: 30px;
+    
 }
 
 .login-form {
@@ -160,15 +150,16 @@ table.center-cells {
     display: inline-block;
 }
 
+
 .login-form-button {
-    margin: 15px;
-    padding: 5px 30px;
+    margin: 15px 3px 15px 3px;
+    width: 130px;
 }
 
 .title-logo {
     background: url(../Content/images/title-logo.png) 50% 50% no-repeat;
-    width: 476px;
-    height: 233px;
+    width: 400px;
+    height: 190px;
     margin: auto;
 }
 
@@ -274,4 +265,9 @@ table.center-cells {
 .task-box {
     border-spacing: 15px 0;
     margin: 0 -15px;
+}
+
+.register-pass {
+    width: 148px;
+    display: inline-block;
 }

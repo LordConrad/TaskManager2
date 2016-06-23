@@ -21,7 +21,7 @@
                 confirmPassword: ''
             };
 
-            $scope.signUp = function() {
+            $scope.signUp = function () {
                 authService.saveRegistration($scope.registration).then(function(response) {
                         $scope.savedSuccessfully = true;
                         $scope.message = "Пользователь создан";
@@ -34,7 +34,7 @@
                                 errors.push(response.data.modelState[key][i]);
                             }
                         }
-                        $scope.message = "Ошибка при создании пользователя: " + errors.join(' ');
+                        $scope.message = errors[0];
                     });
             };
 

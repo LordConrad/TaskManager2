@@ -53,6 +53,7 @@ namespace TaskManager.DataService.Controllers
                 {
                     return BadRequest();
                 }
+                return BadRequest(ModelState);
             }
             return null;
         }

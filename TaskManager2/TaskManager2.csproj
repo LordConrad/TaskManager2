@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Less, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Less.3.0\lib\Less.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -95,7 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\44.gif" />
-    <Content Include="Content\flip.css" />
+    <None Include="Content\flipper.less" />
     <Content Include="Content\images\back.jpg" />
     <Content Include="Content\images\back_1.jpg" />
     <Content Include="Content\images\currencies_back.jpg" />
@@ -132,6 +136,7 @@
     <Content Include="scripts\app\controllers\recipientTaskController.js" />
     <Content Include="scripts\app\controllers\senderTasksController.js" />
     <Content Include="scripts\app\controllers\signUpController.js" />
+    <Content Include="scripts\app\directives\flipper.js" />
     <Content Include="scripts\app\services\authInterceptorService.js" />
     <Content Include="scripts\app\services\authService.js" />
     <Content Include="scripts\app\services\commentService.js" />
@@ -202,6 +207,7 @@
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\jquery-1.9.1.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
+    <Content Include="scripts\less.min.js" />
     <Content Include="scripts\ng-table.js" />
     <Content Include="scripts\soapclient.js" />
     <Content Include="Web.config" />

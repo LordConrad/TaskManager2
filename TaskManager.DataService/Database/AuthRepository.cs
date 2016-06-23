@@ -25,6 +25,7 @@ namespace TaskManager.DataService.Database
         public Task<ClaimsIdentity> CreateIdentityAsync(ApplicationUser user, string authType)
         {
             return _userManager.CreateIdentityAsync(user, authType);
+            //return _userManager.Create(user, user.p)
         }
 
         public async Task<IdentityResult> RegisterUser(UserModel userModel)

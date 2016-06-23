@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -38,6 +40,11 @@ namespace TaskManager.DataService.Database
                 manager.UserTokenProvider = new DataProtectorTokenProvider<ApplicationUser, int>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;
+        }
+
+        public override Task<ClaimsIdentity> CreateIdentityAsync(ApplicationUser user, string authenticationType)
+        {
+            return base.CreateIdentityAsync(user, authenticationType);
         }
     }
 }

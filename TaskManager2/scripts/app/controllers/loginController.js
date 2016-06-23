@@ -9,6 +9,10 @@
                 password: ''
             };
 
+            $scope.flip = function() {
+                $scope.flipped = !$scope.flipped;
+            };
+
             $scope.message = '';
             $scope.loading = false;
 
