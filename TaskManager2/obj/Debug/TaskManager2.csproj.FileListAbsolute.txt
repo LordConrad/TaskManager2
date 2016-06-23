@@ -64,3 +64,5 @@ d:\Projects\TaskManager2\TaskManager2\bin\Microsoft.CodeDom.Providers.DotNetComp
 d:\Projects\TaskManager2\TaskManager2\obj\Debug\TaskManager2.csprojResolveAssemblyReference.cache
 d:\Projects\TaskManager2\TaskManager2\obj\Debug\TaskManager2.dll
 d:\Projects\TaskManager2\TaskManager2\obj\Debug\TaskManager2.pdb
+D:\Projects\TaskManager2\TaskManager2\bin\Less.dll
+D:\Projects\TaskManager2\TaskManager2\bin\Less.pdb
