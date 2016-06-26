@@ -9,16 +9,27 @@ namespace TaskManager.DataService.Models
 {
     public class UserModel
     {
-        [Required]
+        [Required(ErrorMessage = "Введите логин")]
         [DisplayName("Логин")]
-        [StringLength(20, ErrorMessage = "Логин должен состоять как минимум из {2} символов"), MinLength(3)]
+        [MinLength(3, ErrorMessage = "Логин должен состоять как минимум из {1} символов")]
+        [MaxLength(20, ErrorMessage = "Максимальная длина логина {1} символов")]
         public string Username { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Введите фамилию и инициалы")]
+        [DisplayName("Ф.И.О.")]
+        [MinLength(3, ErrorMessage = "Введите фамилию и инициалы (пример: Иванов И.И.)")]
+        [MaxLength(40, ErrorMessage = "Введите фамилию и инициалы (пример: Иванов И.И.)")]
+        [RegularExpression(@"^([А-ЯЁ][а-яё]+\s[А-ЯЁ]\.[А-ЯЁ]\.)$", ErrorMessage = "Неверный формат Ф.И.О. (пример: Иванов И.И.)")]
+        public string FullName { get; set; }
+
+        [Required(ErrorMessage = "Введите пароль")]
         [DisplayName("Пароль")]
         [DataType(DataType.Password)]
-        [StringLength(20, ErrorMessage = "Пароль должен состоять как минимум из {2} символов"), MinLength(3)]
+        [MinLength(3, ErrorMessage = "Пароль должен состоять как минимум из {1} символов")]
+        [MaxLength(20, ErrorMessage = "Максимальная длина пароля {1} символов")]
         public string Password { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Повторите ввод пароля")]
         [DisplayName("Подтверждение пароля")]
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Пароли не совпадают")]

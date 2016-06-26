@@ -43,15 +43,13 @@
 
             var saveRegistration = function(registration) {
                 clearAuthData();
-                $rootScope.loading = true;
                 return $http({
                     method: 'POST',
                     url: apiRoot + '/account/register',
                     data: registration
-                }).success(function (response) {
+                }).success(function(response) {
                     return response;
                 }).finally(function() {
-                    $rootScope.loading = false;
                 });
             };
 

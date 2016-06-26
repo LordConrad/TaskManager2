@@ -267,7 +267,7 @@ table.center-cells {
     margin: 0 -15px;
 }
 
-.register-pass {
+.login-inline-textbox {
     width: 148px;
     display: inline-block;
 }

@@ -4,7 +4,7 @@
             <front>
                 <div class="title-logo"></div>
                     <form ng-submit="login();" class="form-group login-form">
-                        <input class="form-control margin-top-25" ng-model="loginData.username" placeholder="Логин" />
+                        <input class="form-control margin-top-15" ng-model="loginData.username" placeholder="Логин" />
                         <input class="form-control margin-top-15" type="password" ng-model="loginData.password" placeholder="Пароль" />
                         <div>
                             <button type="submit" ng-disabled="loading" class="btn btn-primary login-form-button">Вход</button>
@@ -15,11 +15,14 @@
             </front>
             <back>
                 <div class="title-logo"></div>
-                <form ng-submit="signUp();" class="form-group login-form" ng-controller="signUpController">
-                    <input class="form-control margin-top-25" ng-model="registration.username" placeholder="Логин"/>
+                <form ng-submit="signUp();" class="form-group login-form">
                     <div>
-                        <input class="form-control margin-top-15 register-pass" type="password" ng-model="registration.password" placeholder="Пароль" />
-                        <input class="form-control margin-top-15 register-pass" type="password" ng-model="registration.confirmPassword" placeholder="Пароль еще раз" />
+                        <input class="form-control margin-top-15 login-inline-textbox" ng-model="registration.username" placeholder="Логин" />
+                        <input class="form-control margin-top-15 login-inline-textbox" ng-model="registration.fullname" placeholder="Ф.И.О." />
+                    </div>
+                    <div>
+                        <input class="form-control margin-top-15 login-inline-textbox" type="password" ng-model="registration.password" placeholder="Пароль"/>
+                        <input class="form-control margin-top-15 login-inline-textbox" type="password" ng-model="registration.confirmPassword" placeholder="Пароль еще раз"/>
                     </div>
                     <div>
                         <button type="submit" ng-disabled="loading" class="btn btn-primary login-form-button">Создать</button>

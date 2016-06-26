@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin;
+using Microsoft.Owin.Security.DataProtection;
+using Microsoft.Owin.Security.OAuth;
 using TaskManager.DataService.Database.DbModels;
 using TaskManager.DataService.Models;
 
@@ -25,7 +29,6 @@ namespace TaskManager.DataService.Database
         public Task<ClaimsIdentity> CreateIdentityAsync(ApplicationUser user, string authType)
         {
             return _userManager.CreateIdentityAsync(user, authType);
-            //return _userManager.Create(user, user.p)
         }
 
         public async Task<IdentityResult> RegisterUser(UserModel userModel)

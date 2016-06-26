@@ -135,7 +135,6 @@
     <Content Include="scripts\app\controllers\navbarController.js" />
     <Content Include="scripts\app\controllers\recipientTaskController.js" />
     <Content Include="scripts\app\controllers\senderTasksController.js" />
-    <Content Include="scripts\app\controllers\signUpController.js" />
     <Content Include="scripts\app\directives\flipper.js" />
     <Content Include="scripts\app\services\authInterceptorService.js" />
     <Content Include="scripts\app\services\authService.js" />

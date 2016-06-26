@@ -33,9 +33,11 @@ namespace TaskManager.DataService.App_Start
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(10000),
                 Provider = new SimpleAuthorizationServerProvider()
             };
-            //app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
+            app.CreatePerOwinContext(AuthContext.Create);
+            app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.UseOAuthAuthorizationServer(oAuthAuthorizationServerOptions);
             app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+            
         }
     }
 }

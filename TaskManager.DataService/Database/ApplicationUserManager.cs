@@ -19,12 +19,13 @@ namespace TaskManager.DataService.Database
             IOwinContext context)
         {
             var manager = new ApplicationUserManager(new ApplicationUserStore(context.Get<AuthContext>()));
+
             manager.UserValidator = new UserValidator<ApplicationUser, int>(manager)
             {
                 AllowOnlyAlphanumericUserNames = false,
                 RequireUniqueEmail = false
+                
             };
-
             manager.PasswordValidator = new PasswordValidator
             {
                 RequireDigit = false,
@@ -42,9 +43,10 @@ namespace TaskManager.DataService.Database
             return manager;
         }
 
-        public override Task<ClaimsIdentity> CreateIdentityAsync(ApplicationUser user, string authenticationType)
+        public override Task<IdentityResult> CreateAsync(ApplicationUser user, string password)
         {
-            return base.CreateIdentityAsync(user, authenticationType);
+            var res = base.CreateAsync(user, password);
+            return res;
         }
     }
 }

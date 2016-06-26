@@ -13,5 +13,10 @@ namespace TaskManager.DataService.Database
         {
             
         }
+
+        public static AuthContext Create()
+        {
+            return new AuthContext();
+        }
     }
 }
