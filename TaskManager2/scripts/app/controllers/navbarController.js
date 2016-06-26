@@ -27,6 +27,7 @@
 
             $scope.recipientTasksUrl = viewsRoot + '/#/recipientTasks';
             $scope.exchangeUrl = viewsRoot + '/#/exchange';
+            $scope.profileUrl = viewsRoot + '/#/profile';
         }
     ]);
 })();

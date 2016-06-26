@@ -42,16 +42,16 @@
                     templateUrl: 'scripts/app/views/senderTasks.html',
                     controller: 'senderTasksController'
                 }).
-                when('/myProfile', {
-                    templateUrl: 'scripts/app/views/myProfile.html',
-                    controller: 'myProfileController'
+                when('/profile', {
+                    templateUrl: 'scripts/app/views/profile.html',
+                    controller: 'profileController'
                 }).
                 when('/exchange', {
                     templateUrl: 'scripts/app/views/exchange.html',
                     controller: 'exchangeController'
                 }).
                 otherwise({
-                    redirectTo: '/myProfile' 
+                    redirectTo: '/profile' 
                 });
             $httpProvider.interceptors.push('authInterceptorService');
         }

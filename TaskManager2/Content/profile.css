@@ -1,0 +1,18 @@
+﻿.profile-avatar {
+    height: 250px;
+    width: 250px;
+    background: url(images/ava_male.png) center center no-repeat;
+    background-size: contain;
+    border: 1px solid lightgray;
+}
+
+.glyph-button {
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.edit-field {
+    display: inline-block;
+    width: 250px;
+    vertical-align: middle;
+}
