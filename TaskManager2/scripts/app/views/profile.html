@@ -4,11 +4,12 @@
         <div class="col-sm-8">
             <fieldset>
                 <div class="form-group">
-                    <label>Имя пользователя:</label>
+                    <div field-editor="profileInfo.username"></div>
+                    <!-- <label>Имя пользователя:</label>
                     <label ng-hide="profileInfo.username.isEdit">{{profileInfo.username.value}}</label><span class="glyph-button glyphicon glyphicon-pencil" ng-hide="profileInfo.username.isEdit" ng-click="setEditField('username')"></span>
                     <div class="edit-field">
                         <div class="input-group input-group-sm" ng-show="profileInfo.username.isEdit">
-                            <input id="username" ng-model="profileInfo.username.value" class="form-control" />
+                            <input id="username" ng-model="profileInfo.username.value" class="form-control"/>
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-default" ng-click="cancelEditField('username')">
                                     <span class="glyphicon glyphicon-remove"></span>
@@ -19,7 +20,23 @@
 
                             </span>
                         </div>
-                    </div>
+                    </div>-->
+                    <!--<label>Должность:</label>
+                    <label ng-hide="profileInfo.position.isEdit">{{profileInfo.position.value}}</label><span class="glyph-button glyphicon glyphicon-pencil" ng-hide="profileInfo.position.isEdit" ng-click="setEditField('position')"></span>
+                    <div class="edit-field">
+                        <div class="input-group input-group-sm" ng-show="profileInfo.position.isEdit">
+                            <input id="username" ng-model="profileInfo.position.value" class="form-control"/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="cancelEditField('position')">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                                <button type="button" class="btn btn-default" ng-click="acceptEditField('position')">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </button>
+
+                            </span>
+                        </div>
+                    </div>-->
                 </div>
             </fieldset>
         </div>

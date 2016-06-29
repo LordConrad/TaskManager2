@@ -138,6 +138,7 @@
     <Content Include="scripts\app\controllers\navbarController.js" />
     <Content Include="scripts\app\controllers\recipientTaskController.js" />
     <Content Include="scripts\app\controllers\senderTasksController.js" />
+    <Content Include="scripts\app\directives\fieldEditor.js" />
     <Content Include="scripts\app\directives\flipper.js" />
     <Content Include="scripts\app\services\authInterceptorService.js" />
     <Content Include="scripts\app\services\authService.js" />
@@ -149,6 +150,7 @@
     <Content Include="scripts\app\views\profile.html" />
     <Content Include="scripts\app\views\recipientTask.html" />
     <Content Include="scripts\app\views\senderTasks.html" />
+    <Content Include="scripts\app\views\templates\fieldEditor.html" />
     <Content Include="scripts\jquery-1.9.1.min.map" />
     <Content Include="scripts\angular-resource.min.js.map" />
     <Content Include="fonts\Exo2\Exo2-Black.ttf" />

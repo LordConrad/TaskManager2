@@ -1,0 +1,17 @@
+﻿<div>
+    <label>{{view.title}}:&nbsp;</label>
+    <label ng-hide='view.isEditEnable'>{{fieldObject.value}}</label><span class='glyph-button glyphicon glyphicon-pencil' ng-hide='view.isEditEnable' ng-click='enableEdit()'></span>
+    <div class='edit-field'>
+        <div class='input-group input-group-sm' ng-show='view.isEditEnable'>
+            <input ng-model='view.editableValue' class='form-control' spellcheck="false" />
+            <span class='input-group-btn'>
+                <button type='button' class='btn btn-default' ng-click='disableEdit()'>
+                    <span class='glyphicon glyphicon-remove'></span>
+                </button>
+                <button type='button' class='btn btn-default' ng-click='save()'>
+                    <span class='glyphicon glyphicon-ok'></span>
+                </button>
+            </span>
+        </div>
+    </div>
+</div>
