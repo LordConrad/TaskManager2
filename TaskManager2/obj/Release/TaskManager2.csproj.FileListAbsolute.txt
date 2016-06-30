@@ -62,3 +62,6 @@ C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\
 C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\obj\Release\TaskManager2.dll
 C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\obj\Release\TaskManager2.pdb
+D:\Projects\TaskManager2\TaskManager2\bin\Less.dll
+D:\Projects\TaskManager2\TaskManager2\bin\Less.pdb
+D:\Projects\TaskManager2\TaskManager2\obj\Release\TaskManager2.csprojResolveAssemblyReference.cache

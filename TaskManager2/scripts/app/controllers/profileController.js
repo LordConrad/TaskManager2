@@ -7,6 +7,12 @@
 
 
             if (authService.authData.isAuth) {
+
+                var profileInfo;
+                authService.getUserProfile(authService.authData.userId).then(function(response) {
+                    profileInfo = response;
+                });
+
                 $scope.profileInfo = {
                     username: {
                         title: 'Имя пользователя',

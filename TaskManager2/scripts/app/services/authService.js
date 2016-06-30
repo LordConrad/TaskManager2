@@ -36,10 +36,10 @@
                 authentication.userRoles = [];
             };
 
-            var logOut = function () {
+            var logOut = function() {
                 clearAuthData();
                 $location.path('/login');
-            }
+            };
 
             var saveRegistration = function(registration) {
                 clearAuthData();
@@ -83,7 +83,16 @@
                 return deffered.promise;
             };
 
-            
+            var getUserProfile = function(id) {
+                return $http({
+                    method: 'GET',
+                    url: apiRoot + '/account/getuser/' + id
+                }).success(function(response) {
+                    return response;
+                }).error(function(error) {
+                    alert(error.message);
+                });
+            };
 
             updateAuthData();
 
@@ -92,6 +101,7 @@
             authServiceFactory.logOut = logOut;
             authServiceFactory.updateAuthData = updateAuthData;
             authServiceFactory.authData = authentication;
+            authServiceFactory.getUserProfile = getUserProfile;
 
             return authServiceFactory;
         }

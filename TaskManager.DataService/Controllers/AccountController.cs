@@ -6,16 +6,24 @@ using System.Web.Http;
 using Microsoft.AspNet.Identity;
 using TaskManager.DataService.Database;
 using TaskManager.DataService.Models;
+using TaskManager.DataService.Services;
 
 namespace TaskManager.DataService.Controllers
 {
     [RoutePrefix("api/account")]
     public class AccountController : BaseApiController
     {
+        private readonly IUserService _userService;
         private KeyValuePair<string, string> _userExistsError = new KeyValuePair<string, string>("Name asd is already taken.", "Такой логин уже зарегистрирован");
+
+        public AccountController()
+        {
+            _userService = new UserService();
+        }
+
         [AllowAnonymous]
         [Route("register")]
-        public async Task<IHttpActionResult> Register(UserModel userModel)
+        public async Task<IHttpActionResult> Register(UserLoginModel userModel)
         {
             if (!ModelState.IsValid)
             {
@@ -28,6 +36,15 @@ namespace TaskManager.DataService.Controllers
                 return errorResult;
             }
             return Ok();
+        }
+
+        [Authorize]
+        [Route("getuser/{id:int}")]
+        public IHttpActionResult GetUser(int id)
+        {
+            var user = _userService.GetUserProfile(id);
+            if (user != null) return Ok(user);
+            return NotFound();
         }
 
         private IHttpActionResult GetErrorResult(IdentityResult result)

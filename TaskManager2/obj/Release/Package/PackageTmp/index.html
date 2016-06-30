@@ -19,12 +19,13 @@
 
     <script src="scripts/angular-ui/ui-bootstrap.min.js"></script>
     <script src="scripts/angular-ui/ui-bootstrap-tpls.js"></script>
-    
+
     <!--<script src="scripts/angular.soap.js"></script>
     <script src="scripts/soapclient.js"></script>-->
 
     <script src="scripts/app/app.js"></script>
     <script src="scripts/ng-table.js"></script>
+    <script src="scripts/app/directives/flipper.js"></script>
     <script src="scripts/app/services/taskService.js"></script>
     <script src="scripts/app/services/commentService.js"></script>
     <script src="scripts/app/services/authService.js"></script>
@@ -33,8 +34,7 @@
     <script src="scripts/app/controllers/recipientTasksController.js"></script>
     <script src="scripts/app/controllers/recipientTaskController.js"></script>
     <script src="scripts/app/controllers/loginController.js"></script>
-    <script src="scripts/app/controllers/signUpController.js"></script>
-    <script src="scripts/app/controllers/myProfileController.js"></script>
+    <script src="scripts/app/controllers/profileController.js"></script>
     <script src="scripts/app/controllers/navbarController.js"></script>
     <script src="scripts/app/controllers/exchangeController.js"></script>
 
@@ -42,7 +42,12 @@
     <link rel="stylesheet" href="Content/bootstrap-theme.css" />
     <link rel="stylesheet" href="Content/spinner.css" />
     <link rel="stylesheet" href="Content/ng-table.css">
-    <link rel="stylesheet" href="Content/site.css" />
+    <link rel="stylesheet" href="Content/site.css"/>
+    <link rel="stylesheet" href="Content/profile.css" />
+    <link rel="stylesheet/less" href="Content/flipper.less"/>
+
+
+    <script type="text/javascript" src="scripts/less.min.js"></script>
 
 </head>
 <body ng-app="app" ng-cloak>
@@ -90,7 +95,7 @@
                     <li class="dropdown" ng-if="isAuth()">
                         <a href="" class="dropdown-toggle" data-toggle="dropdown">{{fullName()}} <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="">Профиль</a></li>
+                            <li><a ng-href="{{profileUrl}}">Профиль</a></li>
                             <!--<li><a href="">Another action</a></li>
                             <li><a href="">Something else here</a></li>-->
                             <li class="divider"></li>

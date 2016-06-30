@@ -14,12 +14,20 @@ namespace TaskManager.DataService.Services
         {
             using (var context = new TaskManagerContext())
             {
-                return context.Tasks
+                try
+                {
+                    var res = context.Tasks
                     .Include(x => x.TaskSender)
                     .Include(x => x.TaskRecipient)
                     .Include(x => x.TaskPriority)
                     .Where(x => x.RecipientId == recipientId)
                     .Select(RecipientTaskConverter.Convert).ToList();
+                    return res;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
             }
         }
 

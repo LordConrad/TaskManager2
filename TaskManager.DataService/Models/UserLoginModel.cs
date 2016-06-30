@@ -7,7 +7,7 @@ using System.Web;
 
 namespace TaskManager.DataService.Models
 {
-    public class UserModel
+    public class UserLoginModel
     {
         [Required(ErrorMessage = "Введите логин")]
         [DisplayName("Логин")]

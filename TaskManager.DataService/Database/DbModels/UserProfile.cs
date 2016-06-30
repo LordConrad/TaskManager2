@@ -17,29 +17,17 @@ namespace TaskManager.DataService.Database.DbModels
         [Required]
         public bool IsActive { get; set; }
 
-        //public int? ChiefId { get; set; }
-        //[ForeignKey("ChiefId")]
-        //public virtual UserProfile RecipChief { get; set; }
+        
+        //[ForeignKey("SenderId")]
+        //public virtual ICollection<Task> SendedTasks { get; set; }
 
-        //[ForeignKey("ChiefId")]
-        //public virtual ICollection<UserProfile> ChiefRecipients { get; set; } 
+        //[ForeignKey("RecipientId")]
+        //public virtual ICollection<Task> RecipTasks { get; set; }
 
-        [ForeignKey("SenderId")]
-        public virtual ICollection<Task> SendedTasks { get; set; }
+        //[ForeignKey("LogUser")]
+        //public virtual ICollection<TaskEeventLog> Logs { get; set; }
 
-        [ForeignKey("RecipientId")]
-        public virtual ICollection<Task> RecipTasks { get; set; }
-
-        [ForeignKey("LogUser")]
-        public virtual ICollection<TaskEeventLog> Logs { get; set; }
-
-        //[ForeignKey("Profile")]
-        //public virtual UserProfileInfo ProfileInfo { get; set; }
-
-        //[ForeignKey("TaskChiefId")]
-        //public virtual ICollection<Task> ChiefTasks { get; set; }
-
-        [ForeignKey("AuthorId")]
-        public virtual ICollection<Comment> Comments { get; set; }
+        //[ForeignKey("AuthorId")]
+        //public virtual ICollection<Comment> Comments { get; set; }
     }
 }

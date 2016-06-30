@@ -37,12 +37,17 @@ namespace TaskManager.DataService.Database
             //    .HasForeignKey(f => f.TaskChiefId)
             //    .WillCascadeOnDelete(false);
 
+            //modelBuilder.Entity<UserDetails>()
+            //    .HasRequired(x => x.UserProfile);
+                
+
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<UserProfile> Users { get; set; }
+        public DbSet<AspNetUsers> Users { get; set; }
         public DbSet<Task> Tasks { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Priority> Priorities { get; set; }
+        public DbSet<UserDetails> UserDetails { get; set; }
     }
 }

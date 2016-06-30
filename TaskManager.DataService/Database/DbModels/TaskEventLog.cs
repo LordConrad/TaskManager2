@@ -15,7 +15,7 @@ namespace TaskManager.DataService.Database.DbModels
         [Required]
         public int UserId { get; set; }
         [ForeignKey("LogUser")]
-        public virtual UserProfile User { get; set; }
+        public virtual AspNetUsers User { get; set; }
         [Required]
         public int TaskId { get; set; }
         [ForeignKey("TaskLog")]

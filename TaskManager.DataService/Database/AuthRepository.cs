@@ -31,7 +31,7 @@ namespace TaskManager.DataService.Database
             return _userManager.CreateIdentityAsync(user, authType);
         }
 
-        public async Task<IdentityResult> RegisterUser(UserModel userModel)
+        public async Task<IdentityResult> RegisterUser(UserLoginModel userModel)
         {
             ApplicationUser user = new ApplicationUser
             {

@@ -1,7 +1,9 @@
 ﻿@font-face {
     font-family: 'Exo 2';
     src: url(../fonts/Exo2/Exo2-Medium.ttf);
+
 }
+
 
 .exo2-font {
     font-family: 'Exo 2';
@@ -9,6 +11,10 @@
 
 .padding-top-20 {
     padding-top: 20px;
+}
+
+.margin-top-5 {
+    margin-top: 5px;
 }
 
 .margin-top-15 {
@@ -50,6 +56,10 @@
 
 .margin-bottom-25 {
     margin-bottom: 25px;
+}
+
+.margin-left-5 {
+    margin-left: 5px;
 }
 
 .widht-120 {
@@ -132,17 +142,7 @@ table.center-cells {
 }
 
 .login-box {
-    width: 500px;
-    position: fixed;
-    top: 150px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    height: 500px;
-    text-align: center;
-    padding-top: 15px;
-    background: rgba(255,255,255,0.4);
-    border-radius: 30px;
+    
 }
 
 .login-form {
@@ -150,15 +150,16 @@ table.center-cells {
     display: inline-block;
 }
 
-.login-button {
-    margin: 15px;
-    padding: 5px 30px;
+
+.login-form-button {
+    margin: 15px 3px 15px 3px;
+    width: 130px;
 }
 
 .title-logo {
     background: url(../Content/images/title-logo.png) 50% 50% no-repeat;
-    width: 476px;
-    height: 233px;
+    width: 400px;
+    height: 190px;
     margin: auto;
 }
 
@@ -236,8 +237,37 @@ table.center-cells {
     padding: 10px;
 }
 
-.task-complete-image {
-    height: 30px;
-    float: left;
-    margin-right: 10px;
+.task-status-image {
+    width: 35px;
+    display: table-cell;
+    height: 35px;
+}
+
+.accepted-image {
+    background: url(../Content/images/sender-ok.png) no-repeat center center;
+    background-size: contain;
+}
+
+.complete-image {
+    background: url(../Content/images/recipient-ok.png) no-repeat center center;
+    background-size: contain;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.task-text {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.task-box {
+    border-spacing: 15px 0;
+    margin: 0 -15px;
+}
+
+.login-inline-textbox {
+    width: 148px;
+    display: inline-block;
 }

@@ -18,11 +18,11 @@ namespace TaskManager.DataService.Database.DbModels
         [Required]
         public int SenderId { get; set; }
         [ForeignKey("SenderId")]
-        public virtual UserProfile TaskSender { get; set; }
+        public virtual AspNetUsers TaskSender { get; set; }
 
         public int? RecipientId { get; set; }
         [ForeignKey("RecipientId")]
-        public virtual UserProfile TaskRecipient { get; set; }
+        public virtual AspNetUsers TaskRecipient { get; set; }
 
         public DateTime? AssignDateTime { get; set; }
 

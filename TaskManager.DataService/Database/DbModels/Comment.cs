@@ -25,6 +25,6 @@ namespace TaskManager.DataService.Database.DbModels
         [Required]
         public int AuthorId { get; set; }
         [ForeignKey("AuthorId")]
-        virtual public UserProfile Author { get; set; }
+        virtual public AspNetUsers Author { get; set; }
     }
 }

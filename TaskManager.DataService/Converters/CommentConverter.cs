@@ -11,7 +11,7 @@ namespace TaskManager.DataService.Converters
             {
                 TaskId = c.TaskId,
                 AuthorId = c.AuthorId,
-                AuthorName = c.Author.UserFullName,
+                AuthorName = c.Author.FullName,
                 CommentDate = c.CommentDate,
                 CommentId = c.CommentId,
                 CommentText = c.CommentText

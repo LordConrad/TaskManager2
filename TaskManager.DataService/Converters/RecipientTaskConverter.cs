@@ -17,7 +17,7 @@ namespace TaskManager.DataService.Converters
                 Deadline = t.Deadline.HasValue ? t.Deadline.Value : new DateTime(),
                 SenderId = t.SenderId,
                 RecipientId = t.RecipientId,
-                SenderName = t.TaskSender.UserFullName,
+                SenderName = t.TaskSender.FullName,
                 CompleteDateTime = t.CompleteDate,
                 AcceptCompleteDateTime = t.AcceptCpmpleteDate,
                 PriorityId = t.TaskPriority != null ? t.TaskPriority.PriorityId : (int?)null,
