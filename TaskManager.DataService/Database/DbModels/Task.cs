@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using TaskManager.DataService.Models;
 
 namespace TaskManager.DataService.Database.DbModels
 {
@@ -15,23 +16,14 @@ namespace TaskManager.DataService.Database.DbModels
         [MaxLength(1000)]
         public string TaskText { get; set; }
 
-        [Required]
         public int SenderId { get; set; }
-        [ForeignKey("SenderId")]
-        public virtual AspNetUsers TaskSender { get; set; }
+        public virtual ApplicationUser TaskSender { get; set; }
 
         public int? RecipientId { get; set; }
-        [ForeignKey("RecipientId")]
-        public virtual AspNetUsers TaskRecipient { get; set; }
+        public virtual ApplicationUser TaskRecipient { get; set; }
 
         public DateTime? AssignDateTime { get; set; }
-
-        //[Required]
-        //public int TaskChiefId { get; set; }
-        //[Required]
-        //[ForeignKey("TaskChiefId")]
-        //public virtual UserProfile TaskChief { get; set; }
-
+        
         public DateTime? Deadline { get; set; }
         [Required]
         public DateTime CreateDate { get; set; }
@@ -40,15 +32,14 @@ namespace TaskManager.DataService.Database.DbModels
 
         public bool IsRecipientViewed { get; set; }
 
+        [ForeignKey("TaskPriority")]
         public int? PriorityId { get; set; }
-        [ForeignKey("PriorityId")]
+        
         public virtual Priority TaskPriority { get; set; }
 
         public string ResultComment { get; set; }
 
-        [ForeignKey("AuthorId")]
         public virtual ICollection<Comment> Comments { get; set; }
-        [ForeignKey("TaskLog")]
         public virtual ICollection<TaskEeventLog> TaskEeventLogs { get; set; }
     }
 }

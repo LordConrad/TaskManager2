@@ -1,4 +1,4 @@
-﻿(function() {
+﻿(function () {
     angular.module('app.controllers').controller('profileController', [
         '$scope',
         'authService',
@@ -9,23 +9,27 @@
             if (authService.authData.isAuth) {
 
                 var profileInfo;
-                authService.getUserProfile(authService.authData.userId).then(function(response) {
-                    profileInfo = response;
+                authService.getUserProfile(authService.authData.userId).then(function (response) {
+                    profileInfo = response.data;
+
+                    $scope.profileInfo = {
+                        username: {
+                            title: 'Имя пользователя',
+                            value: profileInfo.fullName
+                        },
+                        location: {
+                            title: 'Кабинет',
+                            value: profileInfo.location
+                        }
+                    };
+
+                    $scope.name = profileInfo.fullName;
                 });
-
-                $scope.profileInfo = {
-                    username: {
-                        title: 'Имя пользователя',
-                        value: authService.authData.username
-                    }
-                };
-
-                $scope.name = authService.authData.username;
             } else {
                 $location.path('/login');
             }
 
-            
+
         }
     ]);
 })();

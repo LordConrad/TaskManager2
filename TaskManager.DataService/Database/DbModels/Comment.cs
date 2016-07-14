@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using TaskManager.DataService.Models;
 
 namespace TaskManager.DataService.Database.DbModels
 {
@@ -10,21 +11,20 @@ namespace TaskManager.DataService.Database.DbModels
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CommentId { get; set; }
+
         [Required]
         [MaxLength(1000)]
         public string CommentText { get; set; }
+
         [Required]
         public DateTime CommentDate { get; set; }
 
-        [Required]
+        [ForeignKey("Task")]
         public int TaskId { get; set; }
-        [Required]
-        [ForeignKey("TaskId")]
-        virtual public Task Task { get; set; }
+        public virtual Task Task { get; set; }
 
-        [Required]
+        [ForeignKey("Author")]
         public int AuthorId { get; set; }
-        [ForeignKey("AuthorId")]
-        virtual public AspNetUsers Author { get; set; }
+        public virtual ApplicationUser Author { get; set; }
     }
 }

@@ -1,6 +1,6 @@
-SET IDENTITY_INSERT [TaskManagerDb].[dbo].[AspNetUsers] ON
+SET IDENTITY_INSERT [TaskManagerDb2].[dbo].[ApplicationUsers] ON
 
-  INSERT INTO [TaskManagerDb].[dbo].[AspNetUsers]
+  INSERT INTO [TaskManagerDb2].[dbo].[ApplicationUsers]
   (Id, UserName, FullName, PasswordHash, SecurityStamp, EmailConfirmed, PhoneNumberConfirmed, TwoFactorEnabled, LockoutEnabled, AccessFailedCount)
   SELECT
 	mshp.UserId,
@@ -13,18 +13,18 @@ SET IDENTITY_INSERT [TaskManagerDb].[dbo].[AspNetUsers] ON
   FROM [TaskManagerDb].[dbo].[webpages_Membership] mshp
   JOIN [TaskManagerDb].[dbo].[UserProfile] usr ON usr.UserId = mshp.UserId
 
-SET IDENTITY_INSERT [TaskManagerDb].[dbo].[AspNetUsers] OFF
+SET IDENTITY_INSERT [TaskManagerDb2].[dbo].[ApplicationUsers] OFF
 
-SET IDENTITY_INSERT [TaskManagerDb].[dbo].[AspNetRoles] ON
+SET IDENTITY_INSERT [TaskManagerDb2].[dbo].[ApplicationRoles] ON
 
-INSERT INTO [TaskManagerDb].[dbo].[AspNetRoles]
+INSERT INTO [TaskManagerDb2].[dbo].[ApplicationRoles]
 (Id, Name)
 SELECT RoleId, RoleName
 FROM [TaskManagerDb].[dbo].[webpages_Roles]
 
-SET IDENTITY_INSERT [TaskManagerDb].[dbo].[AspNetRoles] OFF
+SET IDENTITY_INSERT [TaskManagerDb2].[dbo].[ApplicationRoles] OFF
 
-INSERT INTO [TaskManagerDb].[dbo].[AspNetUserRoles]
-(RoleId, UserId)
-SELECT RoleId, UserId
+INSERT INTO [TaskManagerDb2].[dbo].[ApplicationUserRoles]
+(RoleId, ApplicationRole_Id, ApplicationUser_Id)
+SELECT 0, RoleId, UserId
 FROM [TaskManagerDb].[dbo].[webpages_UsersInRoles]

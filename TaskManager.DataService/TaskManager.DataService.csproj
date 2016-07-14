@@ -233,7 +233,6 @@
     <Compile Include="Database\ApplicationUserManager.cs" />
     <Compile Include="Database\AuthContext.cs" />
     <Compile Include="Database\AuthRepository.cs" />
-    <Compile Include="Database\DbModels\AspNetUsers.cs" />
     <Compile Include="Database\DbModels\Comment.cs" />
     <Compile Include="Database\DbModels\Priority.cs" />
     <Compile Include="Database\DbModels\Task.cs" />

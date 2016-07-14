@@ -1,36 +1,3 @@
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\ApplicationInsights.config
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\csc.exe
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.CodeAnalysis.dll
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.CSharp.Core.targets
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.VisualBasic.Core.targets
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\System.Collections.Immutable.dll
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\System.Reflection.Metadata.dll
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\vbc.exe
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\VBCSCompiler.exe
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\VBCSCompiler.exe.config
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\TaskManager2.dll.config
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\TaskManager2.dll
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\TaskManager2.pdb
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.Agent.Intercept.dll
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.DependencyCollector.dll
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.PerfCounterCollector.dll
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.ServerTelemetryChannel.dll
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.Web.dll
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.WindowsServer.dll
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.ApplicationInsights.dll
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.DependencyCollector.xml
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.ServerTelemetryChannel.xml
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.Web.xml
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.WindowsServer.xml
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.ApplicationInsights.xml
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\obj\Debug\TaskManager2.csprojResolveAssemblyReference.cache
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\obj\Debug\TaskManager2.dll
-c:\users\conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\obj\Debug\TaskManager2.pdb
 d:\Projects\TaskManager2\TaskManager2\bin\ApplicationInsights.config
 d:\Projects\TaskManager2\TaskManager2\bin\roslyn\csc.exe
 d:\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -66,5 +33,38 @@ d:\Projects\TaskManager2\TaskManager2\obj\Debug\TaskManager2.dll
 d:\Projects\TaskManager2\TaskManager2\obj\Debug\TaskManager2.pdb
 D:\Projects\TaskManager2\TaskManager2\bin\Less.dll
 D:\Projects\TaskManager2\TaskManager2\bin\Less.pdb
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\ApplicationInsights.config
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\csc.exe
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\vbc.exe
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\VBCSCompiler.exe
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\TaskManager2.dll.config
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\TaskManager2.dll
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\TaskManager2.pdb
 C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Less.dll
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.Web.dll
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Less.pdb
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.Web.xml
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\obj\Debug\TaskManager2.csprojResolveAssemblyReference.cache
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\obj\Debug\TaskManager2.dll
+C:\Users\Conrad\documents\visual studio 2015\Projects\TaskManager2\TaskManager2\obj\Debug\TaskManager2.pdb

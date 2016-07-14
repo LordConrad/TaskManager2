@@ -7,7 +7,7 @@ using TaskManager.DataService.Models;
 
 namespace TaskManager.DataService.Database
 {
-    public class AuthContext : IdentityDbContext<ApplicationUser, ApplicationRole, Int32, ApplicationUserLogin, ApplicationUserRole, ApplicationUserClaim>
+    public class AuthContext : IdentityDbContext<ApplicationUser, ApplicationRole, int, ApplicationUserLogin, ApplicationUserRole, ApplicationUserClaim>
     {
         public AuthContext() : base("DefaultConnection")
         {

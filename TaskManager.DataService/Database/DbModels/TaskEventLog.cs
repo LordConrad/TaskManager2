@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using TaskManager.DataService.Models;
 
 namespace TaskManager.DataService.Database.DbModels
 {
@@ -12,14 +13,15 @@ namespace TaskManager.DataService.Database.DbModels
         public int TaskEventLogId { get; set; }
         [Required]
         public DateTime EventDateTime { get; set; }
-        [Required]
+
+        [ForeignKey("User")]
         public int UserId { get; set; }
-        [ForeignKey("LogUser")]
-        public virtual AspNetUsers User { get; set; }
-        [Required]
+        public virtual ApplicationUser User { get; set; }
+
+        [ForeignKey("Task")]
         public int TaskId { get; set; }
-        [ForeignKey("TaskLog")]
         public virtual Task Task { get; set; }
+
         [Required]
         public string PropertyName { get; set; }
         public string OldValue { get; set; }

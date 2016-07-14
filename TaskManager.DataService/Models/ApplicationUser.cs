@@ -7,32 +7,43 @@ using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using TaskManager.DataService.Database;
+using TaskManager.DataService.Database.DbModels;
 
 namespace TaskManager.DataService.Models
 {
-    public class ApplicationUser : IdentityUser<Int32, ApplicationUserLogin, ApplicationUserRole, ApplicationUserClaim>
+    public class ApplicationUser : IdentityUser<int, ApplicationUserLogin, ApplicationUserRole, ApplicationUserClaim>
     {
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser, Int32> manager)
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser, int> manager)
         {
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             return userIdentity;
         }
 
         public string FullName { get; set; }
+        public virtual UserDetails UserDetails { get; set; }
+        public virtual ICollection<TaskEeventLog> Logs { get; set; }
+        public virtual ICollection<Database.DbModels.Task> SendedTasks { get; set; }
+        public virtual ICollection<Database.DbModels.Task> AssignedTasks { get; set; } 
+        public virtual ICollection<Database.DbModels.Comment> Comments { get; set; } 
+
     }
 
-    public class ApplicationUserLogin : IdentityUserLogin<Int32> { }
-    public class ApplicationUserRole : IdentityUserRole<Int32> { }
-    public class ApplicationUserClaim : IdentityUserClaim<Int32> { }
+    public class ApplicationUserLogin : IdentityUserLogin<int>
+    {
+        
+    }
 
-    public class ApplicationRole : IdentityRole<Int32, ApplicationUserRole>
+    public class ApplicationUserRole : IdentityUserRole<int> { }
+    public class ApplicationUserClaim : IdentityUserClaim<int> { }
+
+    public class ApplicationRole : IdentityRole<int, ApplicationUserRole>
     {
         public ApplicationRole() { }
 
         public ApplicationRole(string name) { Name = name; }
     }
 
-    public class ApplicationUserStore : UserStore<ApplicationUser, ApplicationRole, Int32, ApplicationUserLogin, ApplicationUserRole, ApplicationUserClaim>
+    public class ApplicationUserStore : UserStore<ApplicationUser, ApplicationRole, int, ApplicationUserLogin, ApplicationUserRole, ApplicationUserClaim>
     {
         public ApplicationUserStore(AuthContext context)
             : base(context)
@@ -40,7 +51,7 @@ namespace TaskManager.DataService.Models
         }
     }
 
-    public class ApplicationRoleStore : RoleStore<ApplicationRole, Int32, ApplicationUserRole>
+    public class ApplicationRoleStore : RoleStore<ApplicationRole, int, ApplicationUserRole>
     {
         public ApplicationRoleStore(AuthContext context)
             : base(context)

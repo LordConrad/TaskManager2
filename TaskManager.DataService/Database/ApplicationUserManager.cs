@@ -19,7 +19,7 @@ namespace TaskManager.DataService.Database
             IOwinContext context)
         {
             var manager = new ApplicationUserManager(new ApplicationUserStore(context.Get<AuthContext>()));
-
+            
             manager.UserValidator = new UserValidator<ApplicationUser, int>(manager)
             {
                 AllowOnlyAlphanumericUserNames = false,

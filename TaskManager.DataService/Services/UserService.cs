@@ -21,12 +21,20 @@ namespace TaskManager.DataService.Services
             {
                 try
                 {
-                    var users = context.Users
-                        .Include(x => x.UserDetails)
-                    .Where(x => x.Id == id);
-                    if (users.Any())
+                    var user = context.Users.Find(id);
+                    if (user != null)
                     {
-                        var user = users.First();
+                        if (user.UserDetails == null)
+                        {
+                            user.UserDetails = new UserDetails
+                            {
+                                Location = "409"
+                            };
+                        }
+                        context.SaveChanges();
+                    
+
+                    
                         return new UserProfileModel
                         {
                             UserId = user.Id,
@@ -39,7 +47,7 @@ namespace TaskManager.DataService.Services
                             CellPhoneNumber = user.UserDetails != null ? user.UserDetails.CellPhoneNumber : ""
                         };
                     }
-                    
+
                 }
                 catch (Exception ex)
                 {
