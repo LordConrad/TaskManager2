@@ -27,21 +27,16 @@ namespace TaskManager.DataService.Database
                 .HasForeignKey(x => x.RecipientId)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<ApplicationUser>()
-                .HasMany(x => x.Comments)
-                .WithRequired(x => x.Author)
+            modelBuilder.Entity<Task>()
+                .HasOptional(x => x.TaskPriority)
+                .WithMany(x => x.SamePriorityTasks)
+                .HasForeignKey(x => x.PriorityId)
                 .WillCascadeOnDelete(false);
-
-            //modelBuilder.Entity<Comment>()
-            //    .HasRequired(x => x.Author)
-            //    .WithMany(x => x.Comments)
-            //    .HasForeignKey(x => x.AuthorId)
-            //    .WillCascadeOnDelete(false);
-
-            //modelBuilder.Entity<Task>()
+            
+            //modelBuilder.Entity<ApplicationUser>()
             //    .HasMany(x => x.Comments)
-            //    .WithOptional(x => x.Task)
-            //    .HasForeignKey(x => x.TaskId)
+            //    .WithRequired(x => x.Author)
+            //    .HasForeignKey(x => x.CommentId)
             //    .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Comment>()
@@ -50,32 +45,30 @@ namespace TaskManager.DataService.Database
                 .HasForeignKey(x => x.TaskId)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Comment>()
+                .HasRequired(x => x.Author)
+                .WithMany(x => x.Comments)
+                .HasForeignKey(x => x.AuthorId)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<TaskEeventLog>()
                 .HasRequired(x => x.Task)
                 .WithMany(x => x.TaskEeventLogs)
+                .HasForeignKey(x => x.TaskId)
                 .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<TaskEeventLog>()
                 .HasRequired(x => x.User)
                 .WithMany(x => x.Logs)
+                .HasForeignKey(x => x.UserId)
                 .WillCascadeOnDelete(true);
-
-            //modelBuilder.Entity<Task>()
-            //    .HasRequired(x => x.TaskChief)
-            //    .WithMany(m => m.ChiefTasks)
-            //    .HasForeignKey(f => f.TaskChiefId)
-            //    .WillCascadeOnDelete(false);
-
+            
             modelBuilder.Entity<ApplicationUserLogin>()
                 .HasKey(x => x.UserId);
 
             modelBuilder.Entity<ApplicationUserRole>()
                 .HasKey(x => x.UserId);
-
-            //modelBuilder.Entity<ApplicationUser>()
-            //    .HasOptional(x => x.UserDetails)
-            //    .WithRequired(x => x.UserProfile);
-
+            
             modelBuilder.Entity<UserDetails>()
                 .HasRequired(x => x.UserProfile)
                 .WithOptional(x => x.UserDetails)

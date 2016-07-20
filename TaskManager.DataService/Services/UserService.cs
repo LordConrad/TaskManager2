@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Data.Entity;
+using System.Reflection;
 using TaskManager.DataService.Database;
 using TaskManager.DataService.Database.DbModels;
 using TaskManager.DataService.Models;
+using TaskManager.DataService.ViewModels;
 
 namespace TaskManager.DataService.Services
 {
     public interface IUserService
     {
         UserProfileModel GetUserProfile(int id);
+        bool UpdateProfile(UpdateProfileViewModel profile);
     }
 
     public class UserService : IUserService
@@ -24,17 +28,6 @@ namespace TaskManager.DataService.Services
                     var user = context.Users.Find(id);
                     if (user != null)
                     {
-                        if (user.UserDetails == null)
-                        {
-                            user.UserDetails = new UserDetails
-                            {
-                                Location = "409"
-                            };
-                        }
-                        context.SaveChanges();
-                    
-
-                    
                         return new UserProfileModel
                         {
                             UserId = user.Id,
@@ -55,6 +48,31 @@ namespace TaskManager.DataService.Services
                 }
                 return null;
             }
+        }
+
+        public bool UpdateProfile(UpdateProfileViewModel profile)
+        {
+            using (var context = new TaskManagerContext())
+            {
+                var user = context.Users.Find(int.Parse(profile.UserId));
+                if (user != null)
+                {
+                    IEnumerable<PropertyInfo> props = typeof (UserDetails).GetProperties().Where(x => Attribute.IsDefined(x, typeof (DisplayAttribute)));
+                    PropertyInfo prop = props.FirstOrDefault(x => x.CustomAttributes.Any(y => y.NamedArguments.Any(z => z.TypedValue.Value.Equals(profile.Title))));
+                    var userDetails = new UserDetails
+                    {
+                        UserId = int.Parse(profile.UserId),
+                    };
+                    if (prop == null) return false;
+                    prop.SetValue(userDetails, profile.NewValue);
+                    var currentProfile = context.UserDetails.Find(userDetails.UserId);
+                    EntityState state = currentProfile == null ? EntityState.Added : EntityState.Modified;
+                    context.Entry(userDetails).State = EntityState.Added;
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

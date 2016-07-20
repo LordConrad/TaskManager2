@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using TaskManager.DataService.Database.DbModels;
 
 namespace TaskManager.DataService.Models
 {
+    [Table("AspNetUsers")]
     public class ApplicationUser : IdentityUser<int, ApplicationUserLogin, ApplicationUserRole, ApplicationUserClaim>
     {
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser, int> manager)
@@ -32,10 +34,12 @@ namespace TaskManager.DataService.Models
     {
         
     }
-
+    [Table("AspNetUserRoles")]
     public class ApplicationUserRole : IdentityUserRole<int> { }
+    [Table("AspNetUserClaims")]
     public class ApplicationUserClaim : IdentityUserClaim<int> { }
 
+    [Table("AspNetRoles")]
     public class ApplicationRole : IdentityRole<int, ApplicationUserRole>
     {
         public ApplicationRole() { }

@@ -14,11 +14,9 @@ namespace TaskManager.DataService.Database.DbModels
         [Required]
         public DateTime EventDateTime { get; set; }
 
-        [ForeignKey("User")]
         public int UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
 
-        [ForeignKey("Task")]
         public int TaskId { get; set; }
         public virtual Task Task { get; set; }
 

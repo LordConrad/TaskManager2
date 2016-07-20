@@ -265,6 +265,7 @@
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Utilities\CacheControlAttribute.cs" />
     <Compile Include="ViewModels\ExchangeRateParameterViewModel.cs" />
+    <Compile Include="ViewModels\UpdateProfileViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

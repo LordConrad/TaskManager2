@@ -100,6 +100,7 @@
   <ItemGroup>
     <Content Include="Content\44.gif" />
     <None Include="Content\flipper.less" />
+    <Content Include="Content\fieldEditor.css" />
     <Content Include="Content\images\ava_female.ico" />
     <Content Include="Content\images\ava_male.png" />
     <Content Include="Content\images\back.jpg" />
@@ -144,6 +145,7 @@
     <Content Include="scripts\app\services\authService.js" />
     <Content Include="scripts\app\services\commentService.js" />
     <Content Include="scripts\app\services\exchangeService.js" />
+    <Content Include="scripts\app\services\profileService.js" />
     <Content Include="scripts\app\services\taskService.js" />
     <Content Include="scripts\app\views\exchange.html" />
     <Content Include="scripts\app\views\login.html" />

@@ -15,10 +15,8 @@ namespace TaskManager.DataService.Database.DbModels
         [Required]
         [MaxLength(1000)]
         public string TaskText { get; set; }
-
         public int SenderId { get; set; }
         public virtual ApplicationUser TaskSender { get; set; }
-
         public int? RecipientId { get; set; }
         public virtual ApplicationUser TaskRecipient { get; set; }
 
@@ -32,7 +30,6 @@ namespace TaskManager.DataService.Database.DbModels
 
         public bool IsRecipientViewed { get; set; }
 
-        [ForeignKey("TaskPriority")]
         public int? PriorityId { get; set; }
         
         public virtual Priority TaskPriority { get; set; }

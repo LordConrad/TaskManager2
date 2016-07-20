@@ -9,9 +9,19 @@
                 fieldObject: '=fieldEditor'
             },
             link: function(scope, element, attrs) {
+                scope.$watch("fieldObject", function(fieldObject) {
+                    if (fieldObject) {
+                        scope.view = {
+                            editableValue: fieldObject.value,
+                            title: fieldObject.title,
+                            isEditEnable: false
+                        }
+                    }
+                });
+
                 scope.view = {
-                    editableValue: scope.fieldObject.value,
-                    title: scope.fieldObject.title,
+                    editableValue: "",
+                    title: "",
                     isEditEnable: false
                 }
 
@@ -28,7 +38,10 @@
                     scope.view.isEditEnable = false;
                 }
 
-                scope.save = function() {
+                scope.save = function () {
+                    if (scope.fieldObject.value !== scope.view.editableValue) {
+                        scope.fieldObject.saveMethod(scope.fieldObject.title, scope.view.editableValue);
+                    }
                     scope.fieldObject.value = scope.view.editableValue;
                     scope.disableEdit();
                 }

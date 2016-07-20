@@ -19,11 +19,9 @@ namespace TaskManager.DataService.Database.DbModels
         [Required]
         public DateTime CommentDate { get; set; }
 
-        [ForeignKey("Task")]
         public int TaskId { get; set; }
         public virtual Task Task { get; set; }
 
-        [ForeignKey("Author")]
         public int AuthorId { get; set; }
         public virtual ApplicationUser Author { get; set; }
     }

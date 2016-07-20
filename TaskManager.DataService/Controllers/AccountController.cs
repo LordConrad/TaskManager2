@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using TaskManager.DataService.Database;
 using TaskManager.DataService.Models;
 using TaskManager.DataService.Services;
+using TaskManager.DataService.ViewModels;
 
 namespace TaskManager.DataService.Controllers
 {
@@ -45,6 +46,15 @@ namespace TaskManager.DataService.Controllers
             var user = _userService.GetUserProfile(id);
             if (user != null) return Ok(user);
             return NotFound();
+        }
+
+        [Authorize]
+        [Route("updateProfile")]
+        [HttpPost]
+        public IHttpActionResult UpdateProfile(UpdateProfileViewModel profile)
+        {
+            if (_userService.UpdateProfile(profile)) return Ok();
+            return InternalServerError();
         }
 
         private IHttpActionResult GetErrorResult(IdentityResult result)
