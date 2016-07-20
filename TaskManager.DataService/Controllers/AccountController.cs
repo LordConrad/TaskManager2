@@ -53,6 +53,8 @@ namespace TaskManager.DataService.Controllers
         [HttpPost]
         public IHttpActionResult UpdateProfile(UpdateProfileViewModel profile)
         {
+            if (!User.Identity.GetUserId().Equals(profile.UserId))
+                return InternalServerError(new ArgumentException("Illegal user ID"));
             if (_userService.UpdateProfile(profile)) return Ok();
             return InternalServerError();
         }

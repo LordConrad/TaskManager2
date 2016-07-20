@@ -264,6 +264,7 @@
     <Compile Include="Services\TaskService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Utilities\CacheControlAttribute.cs" />
+    <Compile Include="Utils\Utils.cs" />
     <Compile Include="ViewModels\ExchangeRateParameterViewModel.cs" />
     <Compile Include="ViewModels\UpdateProfileViewModel.cs" />
   </ItemGroup>

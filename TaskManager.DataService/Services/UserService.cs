@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Data.Entity;
+
 using System.Reflection;
 using TaskManager.DataService.Database;
 using TaskManager.DataService.Database.DbModels;
@@ -57,19 +59,36 @@ namespace TaskManager.DataService.Services
                 var user = context.Users.Find(int.Parse(profile.UserId));
                 if (user != null)
                 {
-                    IEnumerable<PropertyInfo> props = typeof (UserDetails).GetProperties().Where(x => Attribute.IsDefined(x, typeof (DisplayAttribute)));
-                    PropertyInfo prop = props.FirstOrDefault(x => x.CustomAttributes.Any(y => y.NamedArguments.Any(z => z.TypedValue.Value.Equals(profile.Title))));
-                    var userDetails = new UserDetails
+                    
+                    var currentProfile = context.UserDetails.Find(int.Parse(profile.UserId));
+                    try
                     {
-                        UserId = int.Parse(profile.UserId),
-                    };
-                    if (prop == null) return false;
-                    prop.SetValue(userDetails, profile.NewValue);
-                    var currentProfile = context.UserDetails.Find(userDetails.UserId);
-                    EntityState state = currentProfile == null ? EntityState.Added : EntityState.Modified;
-                    context.Entry(userDetails).State = EntityState.Added;
-                    context.SaveChanges();
-                    return true;
+                        if (currentProfile != null)
+                        {
+                            var p = Utils.Utils.GetPropertyByDisplayNameAttribute(currentProfile.GetType(), profile.Title);
+                            if (p != null)
+                            {
+                                p.SetValue(currentProfile, profile.NewValue);
+                            }
+                        }
+                        else
+                        {
+                            PropertyInfo p = Utils.Utils.GetPropertyByDisplayNameAttribute(typeof(UserDetails), profile.Title);
+                            var userDetails = new UserDetails
+                            {
+                                UserId = int.Parse(profile.UserId),
+                            };
+                            if (p == null) return false;
+                            p.SetValue(userDetails, profile.NewValue);
+                            context.Entry(userDetails).State = EntityState.Added;
+                        }
+                        context.SaveChanges();
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        return false;
+                    }
                 }
             }
             return false;
