@@ -1,5 +1,5 @@
-﻿(function() {
-    angular.module('app.controllers').controller('senderTasksController', [
+﻿(function () {
+    angular.module('app.controllers').controller('unassignedTasksController', [
         '$scope',
         'ngTableParams',
         'taskService',
@@ -8,17 +8,8 @@
         'authService',
         function ($scope, NgTableParams, taskService, commentService, $location, authService) {
 
-            //$scope.checkDeadline = function (deadline) {
-            //    if (deadline) {
-            //        if (new Date(deadline) < new Date('2015-04-01')) {
-            //            return { 'background': '-webkit-linear-gradient(left, rgba(255,255,255,1) 51%,rgba(255,96,99,1) 100%)' };
-            //        }
-            //    }
-            //    return null;
-            //};
-
             $scope.showTask = function (id) {
-                $location.path('/senderTask/' + id);
+                $location.path('/unassignedTask/' + id);
             };
 
             $scope.tableParams = new NgTableParams(
@@ -30,7 +21,7 @@
                 total: 0,
                 getData: function ($defer, params) {
                     var filterText = $scope.filter ? $scope.filter.Text : '';
-                    taskService.getSenderTasks($defer, params, filterText, authService.authData.userId);
+                    taskService.getUnassignedTasks($defer, params, filterText);
                 }
             });
 

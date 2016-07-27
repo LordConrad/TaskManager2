@@ -10,7 +10,12 @@ namespace TaskManager.DataService.Converters
             return new SenderTask
             {
                 Id = t.TaskId,
-                Text = t.TaskText
+                Text = t.TaskText,
+                CompleteDateTime = t.CompleteDate,
+                AssignDateTime = t.AssignDateTime,
+                Deadline = t.Deadline,
+                CreateDateTime = t.CreateDate,
+                RecipientName = t.TaskRecipient != null ? t.TaskRecipient.FullName : ""
             };
         }
     }

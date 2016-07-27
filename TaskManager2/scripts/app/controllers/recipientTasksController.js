@@ -6,7 +6,8 @@
         'taskService',
         '$location',
         'authService',
-        function ($scope, NgTableParams, taskService, $location, authService) {
+        'viewsRoot',
+        function ($scope, NgTableParams, taskService, $location, authService, viewsRoot) {
 
             //$scope.checkDeadline = function (deadline) {
             //    if (deadline) {

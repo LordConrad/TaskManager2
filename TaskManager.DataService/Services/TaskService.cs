@@ -8,6 +8,15 @@ using TaskManager.DataService.Models;
 
 namespace TaskManager.DataService.Services
 {
+    public interface ITaskService
+    {
+        IEnumerable<RecipientTask> GetRecipientTasks(int recipientId);
+        RecipientTask GetRecipientTask(int taskId);
+        IEnumerable<SenderTask> GetSenderTasks(int senderId);
+        IEnumerable<UnassignedTask> GetUnassignedTasks(); 
+        bool CompleteTask(int id);
+    }
+
     public class TaskService : ITaskService
     {
         public IEnumerable<RecipientTask> GetRecipientTasks(int recipientId)
@@ -52,13 +61,40 @@ namespace TaskManager.DataService.Services
         {
             using (var context = new TaskManagerContext())
             {
-                return context.Tasks
+                try
+                {
+                    var tasks = context.Tasks
                     .Include(x => x.TaskSender)
                     .Include(x => x.TaskRecipient)
                     .Include(x => x.TaskPriority)
                     .Where(x => x.SenderId == senderId)
-                    .Select(SenderTaskConverter.Convert);
+                    .Select(SenderTaskConverter.Convert).ToList();
+                    return tasks;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+            }
+        }
 
+        public IEnumerable<UnassignedTask> GetUnassignedTasks()
+        {
+            using (var context = new TaskManagerContext())
+            {
+                try
+                {
+                    var tasks = context.Tasks
+                    .Include(x => x.TaskSender)
+                    .Include(x => x.TaskPriority)
+                    .Where(x => x.RecipientId == null)
+                    .Select(UnassignedTaskConverter.Convert).ToList();
+                    return tasks;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
             }
         }
 

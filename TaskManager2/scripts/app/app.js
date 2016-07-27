@@ -34,6 +34,10 @@
                     templateUrl: 'scripts/app/views/recipientTasks.html',
                     controller: 'recipientTasksController'
                 }).
+                when('/unassignedTasks', {
+                    templateUrl: 'scripts/app/views/unassignedTasks.html',
+                    controller: 'unassignedTasksController'
+                }).
                 when('/recipientTask/:taskId', {
                     templateUrl: 'scripts/app/views/recipientTask.html',
                     controller: 'recipientTaskController'
@@ -42,7 +46,7 @@
                     templateUrl: 'scripts/app/views/senderTasks.html',
                     controller: 'senderTasksController'
                 }).
-                when('/profile', {
+                when('/profile/:id', {
                     templateUrl: 'scripts/app/views/profile.html',
                     controller: 'profileController'
                 }).

@@ -229,6 +229,7 @@
     <Compile Include="Converters\CommentConverter.cs" />
     <Compile Include="Converters\RecipientTaskConverter.cs" />
     <Compile Include="Converters\SenderTaskConverter.cs" />
+    <Compile Include="Converters\UnassignedTaskConverter.cs" />
     <Compile Include="Database\ApplicationRoleManager.cs" />
     <Compile Include="Database\ApplicationUserManager.cs" />
     <Compile Include="Database\AuthContext.cs" />
@@ -252,6 +253,7 @@
     <Compile Include="Models\ExchangeRate.cs" />
     <Compile Include="Models\RecipientTask.cs" />
     <Compile Include="Models\SenderTask.cs" />
+    <Compile Include="Models\UnassignedTask.cs" />
     <Compile Include="Models\UserLoginModel.cs" />
     <Compile Include="Models\UserProfileModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -260,7 +262,6 @@
     <Compile Include="Services\ExchangeService.cs" />
     <Compile Include="Services\ICommentService.cs" />
     <Compile Include="Services\IExchangeService.cs" />
-    <Compile Include="Services\ITaskService.cs" />
     <Compile Include="Services\TaskService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Utilities\CacheControlAttribute.cs" />

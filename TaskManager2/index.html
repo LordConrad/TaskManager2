@@ -33,8 +33,11 @@
     <script src="scripts/app/services/authInterceptorService.js"></script>
     <script src="scripts/app/services/exchangeService.js"></script>
     <script src="scripts/app/services/profileService.js"></script>
+
     <script src="scripts/app/controllers/recipientTasksController.js"></script>
+    <script src="scripts/app/controllers/unassignedTasksController.js"></script>
     <script src="scripts/app/controllers/recipientTaskController.js"></script>
+    <script src="scripts/app/controllers/senderTasksController.js"></script>
     <script src="scripts/app/controllers/loginController.js"></script>
     <script src="scripts/app/controllers/profileController.js"></script>
     <script src="scripts/app/controllers/navbarController.js"></script>
@@ -77,8 +80,9 @@
             </div>
             <div class="navbar-collapse collapse" ng-class="!navCollapsed && 'in'">
                 <ul class="nav navbar-nav">
-                    <li ng-class="{active: isActive('/recipientTasks')}"><a ng-href="{{recipientTasksUrl}}">Входящие заявки</a></li>
-                    <li ><a href="">Исходящие заявки</a></li>
+                    <li ng-if="isRecipient()" ng-class="{active: isActive('/recipientTasks')}"><a ng-href="{{recipientTasksUrl}}">Входящие</a></li>
+                    <li ng-if="isSender()" ng-class="{active: isActive('/senderTasks')}"><a ng-href="{{senderTasksUrl}}">Исходящие</a></li>
+                    <li ng-if="isChief()" ng-class="{active: isActive('/unassignedTasks')}"><a ng-href="{{unassignedTasksUrl}}">Обработка</a></li>
                     <li ng-class="{active: isActive('/exchange')}"><a ng-href="{{exchangeUrl}}">Курсы валют</a></li>
                     <!--<li class="dropdown">
                         <a href="" data-toggle="dropdown" class="dropdown-toggle">Dropdown <b class="caret"></b></a>

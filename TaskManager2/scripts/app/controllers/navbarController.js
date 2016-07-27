@@ -25,9 +25,23 @@
                 authService.logOut();
             };
 
+            $scope.isSender = function() {
+                return authService.authData.userRoles.indexOf('Sender') !== -1;
+            }
+
+            $scope.isRecipient = function () {
+                return authService.authData.userRoles.indexOf('Recipient') !== -1;
+            }
+
+            $scope.isChief = function () {
+                return authService.authData.userRoles.indexOf('Chief') !== -1;
+            }
+
             $scope.recipientTasksUrl = viewsRoot + '/#/recipientTasks';
+            $scope.senderTasksUrl = viewsRoot + '/#/senderTasks';
+            $scope.unassignedTasksUrl = viewsRoot + '/#/unassignedTasks';
             $scope.exchangeUrl = viewsRoot + '/#/exchange';
-            $scope.profileUrl = viewsRoot + '/#/profile';
+            $scope.profileUrl = viewsRoot + '/#/profile/' + authService.authData.userId;
         }
     ]);
 })();

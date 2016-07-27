@@ -7,8 +7,8 @@
         'commentService',
         '$location',
         'authService',
-
-        function ($scope, $routeParams, taskService, commentService, $location, authService) {
+        'viewsRoot',
+        function ($scope, $routeParams, taskService, commentService, $location, authService, viewsRoot) {
 
             $scope.backToList = function () {
                 $location.path('/recipientTasks');
@@ -16,6 +16,8 @@
 
             $scope.addButtonText = "Добавить";
             $scope.addingComment = false;
+
+            $scope.profileUrl = viewsRoot + '/#/profile';
 
             $scope.completeTask = function() {
                 taskService.completeTask($routeParams.taskId).then(function(response) {

@@ -84,15 +84,44 @@
             }
 
             var getSenderTasks = function ($defer, params, filter, senderId) {
+                $rootScope.loading = true;
                 $http({
                     method: 'GET',
-                    url: apiRoot + '/senderTask'
+                    url: apiRoot + '/senderTasks/' + senderId
+                }).success(function(data) {
+                    var filteredData = $filter('filter')(data, filter);
+                    params.total(filteredData.length);
+                    var transformedData = transformData(data, filter, params);
+                    $defer.resolve(transformedData);
+                }).error(function(data) {
+                    alert('error');
+                }).finally(function() {
+                    $rootScope.loading = false;
+                });
+            };
+
+            var getUnassignedTasks = function ($defer, params, filter) {
+                $rootScope.loading = true;
+                $http({
+                    method: 'GET',
+                    url: apiRoot + '/unassignedTasks/'
+                }).success(function (data) {
+                    var filteredData = $filter('filter')(data, filter);
+                    params.total(filteredData.length);
+                    var transformedData = transformData(data, filter, params);
+                    $defer.resolve(transformedData);
+                }).error(function (data) {
+                    alert('error');
+                }).finally(function () {
+                    $rootScope.loading = false;
                 });
             };
 
             return {
                 getRecipientTasks: getRecipientTasks,
+                getSenderTasks: getSenderTasks,
                 getRecipientTask: getRecipientTask,
+                getUnassignedTasks: getUnassignedTasks,
                 completeTask: completeTask
             };
         }

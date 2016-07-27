@@ -2,7 +2,7 @@
 
     <div ng-show="task">
         <div class="row">
-            <div class="col-md-4 col-sm-4"><b>Отправил: </b>{{task.senderName}}</div>
+            <div class="col-md-4 col-sm-4"><b>Отправил: </b><a ng-href="{{profileUrl}}/{{task.senderId}}">{{task.senderName}}</a></div>
             <div class="col-md-4 col-sm-4 text-center left-if-small"><b>Адресована: </b>{{task.assignDateTime | date: 'dd.MM.yyyy HH:mm'}}</div>
             <div class="col-md-4 col-sm-4 text-right left-if-small"><b>Выполнить до: </b>{{task.deadline | date: 'dd.MM.yyyy'}}</div>
         </div>

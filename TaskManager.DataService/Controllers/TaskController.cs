@@ -42,6 +42,14 @@ namespace TaskManager.DataService.Controllers
         }
 
         [HttpGet]
+        [Route("api/unassignedTasks")]
+        [Authorize(Roles = "Chief")]
+        public IEnumerable<UnassignedTask> GetUnassignedTasks()
+        {
+            return _taskService.GetUnassignedTasks();
+        }
+
+        [HttpGet]
         [Authorize(Roles = "Recipient")]
         [Route("api/completeTask/{id:int}")]
         public IHttpActionResult CompleteTask(int id)

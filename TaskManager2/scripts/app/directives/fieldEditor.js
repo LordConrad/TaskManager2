@@ -15,7 +15,8 @@
                             scope.view = {
                                 editableValue: fieldObject.value,
                                 title: fieldObject.title,
-                                isEditEnable: false
+                                isEditEnable: false,
+                                isEditable: fieldObject.isEditable
                             };
                         }
                     });
@@ -23,7 +24,8 @@
                     scope.view = {
                         editableValue: "",
                         title: "",
-                        isEditEnable: false
+                        isEditEnable: false,
+                        isEditable: false
                     };
 
                     scope.enableEdit = function() {

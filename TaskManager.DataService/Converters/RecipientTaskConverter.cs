@@ -12,11 +12,10 @@ namespace TaskManager.DataService.Converters
             {
                 Id = t.TaskId,
                 Text = t.TaskText,
-                // todo: remove checking null value
-                AssignDateTime = t.AssignDateTime.HasValue ? t.AssignDateTime.Value : new DateTime(),
-                Deadline = t.Deadline.HasValue ? t.Deadline.Value : new DateTime(),
+                AssignDateTime = t.AssignDateTime.Value,
+                Deadline = t.Deadline.Value,
                 SenderId = t.SenderId,
-                RecipientId = t.RecipientId,
+                RecipientId = t.RecipientId.Value,
                 SenderName = t.TaskSender.FullName,
                 CompleteDateTime = t.CompleteDate,
                 AcceptCompleteDateTime = t.AcceptCpmpleteDate,
@@ -25,10 +24,6 @@ namespace TaskManager.DataService.Converters
                 IsRecipientViewed = t.IsRecipientViewed
             };
         }
-
-
-
-
-
+        
     }
 }
